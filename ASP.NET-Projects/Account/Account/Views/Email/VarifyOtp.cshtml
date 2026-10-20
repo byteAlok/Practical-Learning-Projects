@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "VerifyOtp";
+}
+
+<h1>Verify OTP</h1>
+@if (ViewBag.Email != null)
+{
+    <div class="alert alert-success">@ViewBag.Email</div>
+}
+
+@if (ViewBag.Result != null)
+{
+    <h3>@ViewBag.Result</h3>
+}
+
+<form asp-action="VerifyOtp" asp-controller="Email" method="post">
+    <label>Enter OTP</label><br />
+    <input type="number" name="userOtp" class="form-control" required />
+    <br /><br />
+    <input type="submit" value="Verify" class="btn btn-success" />
+</form>

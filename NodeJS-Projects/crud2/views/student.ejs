@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if ( messageType != null && (messageType === true || messageType === false) ) { %>
+        <p style="color: green;"><%= message %></p>
+    <% } %>
+    
+    <h1>Student Page</h1>
+
+
+    <table cellpadding="15" cellspacing="0" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+        <% if (totalStudents) { %>
+            <% students.forEach((student, index)=> { %>
+                <tr>
+                    <td>
+                        <%= index + 1 %>
+                    </td>
+                    <td>
+                        <%= student.name %>
+                    </td>
+                    <td>
+                        <%= student.age %>
+                    </td>
+                    <td>
+                        <a href="/update/<%= student._id %>">Update</a>
+                        <form action="/delete/<%= student._id %>" method="POST" style="display: inline;">
+                            <button type="submit">Delete</button></form>
+                        <a href="/student/<%= student._id %>">View</a>
+                    </td>
+                </tr>
+                <% })  } else { %>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <%= student.name %>
+                    </td>
+                    <td>
+                        <%= student.age %>
+                    </td>
+                    <td>
+                        <a href="/update/<%= student._id %>">Update</a>
+                        <a href="/delete/<%= student._id %>">Delete</a>
+                        <a href="/student/<%= student._id %>">View</a>
+                    </td>
+                </tr>  
+                    <% } %>
+           
+
+    </table>
+
+
+</body>
+
+</html>

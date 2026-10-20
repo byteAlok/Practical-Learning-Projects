@@ -1,0 +1,28 @@
+﻿@using Crud4.Models
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+<table>
+    <tr>
+        <th>Doctor Id</th>
+        <th>Doctor Name</th>
+        <th>Doctor Email</th>
+        <th>Doctor Address</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (Doctor d in Model)
+            {
+                <tr>
+                    <td>@d.Id</td>
+                    <td>@d.Name</td>
+                    <td>@d.Email</td>
+                    <td>@d.Address</td>
+
+                    <td>Update Delete</td>
+                </tr>
+            }
+</table>

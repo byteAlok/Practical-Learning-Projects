@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 id="money"> </h2>
+    <h2> 500 Note Count : <span id="n500"></span></h2>
+    <h2> 200 Note Count : <span id="n200"></span></h2>
+    <h2> 100 Note Count : <span id="n100"></span></h2>
+    <h2> 50 Note Count : <span id="n50"></span></h2>
+    <h2> 20 Note Count : <span id="n20"></span></h2>
+    <h2> 10 Note Count : <span id="n10"></span></h2>
+    <h2> 5 Note Count : <span id="n5"></span></h2>
+    <h2> 2 Note Count : <span id="n2"></span></h2>
+    <h2> 1 Note Count : <span id="n1"></span></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        
+        var money = prompt("Enter Any amount")
+        document.getElementById("money").innerHTML = money
+        var temp = money
+
+        var note500 = 0
+        var note200 = 0
+        var note100 = 0
+        var note50 = 0
+        var note20 = 0
+        var note10 = 0
+        var note5 = 0
+        var note2 = 0
+        var note1 = 0
+while(1)
+{
+    if ( temp >= 500 )
+    {
+        note500 = Math.floor(temp / 500)
+        console.log( note500 = Math.floor(temp / 500))
+        temp = temp % 500
+    }
+    else if (temp >= 200)
+    {
+        note200 = Math.floor(temp / 200)
+        console.log( note200 = Math.floor(temp / 200))
+        temp = temp % 200
+        
+    }
+    else if (temp >= 100)
+    {   
+        note100 = Math.floor(temp / 100)
+        console.log( note100 = Math.floor(temp / 100))
+        temp = temp % 100
+    }
+    else if (temp >= 50)
+    {
+        note50 = Math.floor(temp / 50)
+        console.log( note50 = Math.floor(temp / 50))
+        temp = temp % 50
+    }
+    else if (temp >= 20)
+    {   
+        note20 = Math.floor(temp / 20)
+        console.log( note20 = Math.floor(temp / 20))
+        temp = temp % 20
+    }
+    else if (temp >= 10)
+    {
+        note10 = Math.floor(temp / 10)
+        console.log( note10 = Math.floor(temp / 10))
+        temp = temp % 10
+    }
+    else if (temp >= 5)
+    {
+        note5 = Math.floor(temp / 5)
+        console.log( note5 = Math.floor(temp / 5))
+        temp = temp % 5
+    }
+    else if (temp >= 2)
+    {
+        note2 = Math.floor(temp / 2)
+        console.log( note2 = Math.floor(temp / 2))
+        temp = temp % 2
+    }
+    else if (temp >= 1)
+    {
+        note1 = Math.floor(temp / 1)
+        console.log( note1 = Math.floor(temp / 1))
+        temp = temp % 1
+    }
+    if (temp == 0)
+    {
+        break
+    }
+}
+    
+
+    document.getElementById("n500").innerHTML = note500
+    document.getElementById("n200").innerHTML = note200
+    document.getElementById("n100").innerHTML = note100
+    document.getElementById("n50").innerHTML = note50
+    document.getElementById("n20").innerHTML = note20
+    document.getElementById("n10").innerHTML = note10
+    document.getElementById("n5").innerHTML = note5
+    document.getElementById("n2").innerHTML = note2
+    document.getElementById("n1").innerHTML = note1
+
+
+
+    </script>
+</body>
+</html>

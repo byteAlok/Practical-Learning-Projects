@@ -1,0 +1,84 @@
+﻿@model Account.Models.PortfolioPost
+
+@{
+    ViewData["Title"] = "Add Portfolio";
+    Layout = "~/Views/Shared/_UserSidebarLayout.cshtml";
+}
+
+<div class="container py-4">
+
+    <div class="card border-0 shadow-sm rounded-4">
+
+        <div class="card-body p-4 p-md-5">
+
+            <h3 class="fw-bold mb-4">
+                Add Portfolio Post
+            </h3>
+
+            <form asp-action="PortfolioPost"
+                  method="post"
+                  enctype="multipart/form-data">
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-bold">
+                        Portfolio Title
+                    </label>
+
+                    <input asp-for="Title"
+                           class="form-control bg-light"
+                           placeholder="Enter title">
+
+                    <span asp-validation-for="Title"
+                          class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-bold">
+                        Description
+                    </label>
+
+                    <textarea asp-for="Description"
+                              rows="5"
+                              class="form-control bg-light"
+                              placeholder="Describe your work"></textarea>
+
+                    <span asp-validation-for="Description"
+                          class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-bold">
+                        Upload Image
+                    </label>
+
+                    <input type="file"
+                           name="ImageFile"
+                           class="form-control"
+                           accept="image/*">
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary rounded-pill px-5">
+
+                    Post Portfolio
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

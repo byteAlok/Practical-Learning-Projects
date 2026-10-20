@@ -1,0 +1,37 @@
+﻿@using Crud3.Models
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2 class="text-center text-primary">Update Employee</h2>
+
+<div class="row m-0 p-0">
+    <div class="col-sm"></div>
+    <div class="col-sm-6">
+
+        
+        <form method="post" action="/Home/Update">
+         
+            <input type="hidden" name="empid" value="@Model.empid"/>
+
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Update Name"
+                   value="@Model.name" class="form-control mb-2" />
+
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Update Email"
+                   value="@Model.email" class="form-control mb-2" />
+
+            <label>Address</label>
+            <input type="text" name="address" placeholder="Update Address"
+                   value="@Model.address" class="form-control mb-2" />
+
+            <input type="submit" value="Update" class="form-control text-white bg-primary mb-2" />
+        </form>
+
+        
+        <a href="/Home/Index" class="btn bg-success text-white">Show Employee Table</a>
+
+    </div>
+    <div class="col-sm"></div>
+</div>

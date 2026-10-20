@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 Android UI Full Roadmap</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #3949ab;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .phase {
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .phase h2 {
+      margin-top: 0;
+      color: #3949ab;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .note {
+      background: #e8eaf6;
+      padding: 8px 12px;
+      border-left: 4px solid #0051ff;
+      margin: 10px 0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .task {
+      background: #f5f5f5;
+      border-left: 4px solid #0051ff;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 Android UI Full Roadmap</h1>
+    <p>Teaching-Level Depth Guide (Phases 1 → 5)</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Phase 1 -->
+    <div class="phase">
+      <h2>Phase 1 → Basics (Foundation samajhna)</h2>
+      <p><b>Goal:</b> View system ki backbone samajhna (View, ViewGroup, Units, Layout basics)</p>
+      <ul>
+        <li><b>View & ViewGroup</b>
+          <ul>
+            <li>Definition</li>
+            <li>Difference (View = leaf element, ViewGroup = container)</li>
+            <li>Inheritance hierarchy (important for teaching)</li>
+          </ul>
+        </li>
+        <li><b>Units</b>
+          <ul>
+            <li>dp vs sp vs px vs pt</li>
+            <li>Why <code>sp</code> for text only? (Accessibility)</li>
+            <li>Density buckets: ldpi → xxxhdpi</li>
+          </ul>
+        </li>
+        <li><b>Layouts (Old School Basics)</b>
+          <ul>
+            <li>LinearLayout (orientation, weight, gravity, pitfalls)</li>
+            <li>RelativeLayout (alignParent, alignSibling)</li>
+            <li>FrameLayout (z-order stacking)</li>
+            <li>ScrollView (single child limitation)</li>
+          </ul>
+        </li>
+        <li><b>Basic Widgets</b>
+          <ul>
+            <li>TextView → ellipsize, marquee, autoLink, lineSpacing</li>
+            <li>EditText → inputType, hint, filters, maxLength</li>
+            <li>Button, ImageView, CheckBox, RadioButton, Switch, ToggleButton, ProgressBar</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Practice Tasks:</h3>
+      <div class="task">Make a login screen with LinearLayout</div>
+      <div class="task">Make a profile card with RelativeLayout</div>
+      <div class="task">Add a scrolling Terms & Conditions page with ScrollView</div>
+      <div class="task">Implement marquee text in a TextView</div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase">
+      <h2>Phase 2 → Intermediate (Reusability & Performance)</h2>
+      <p><b>Goal:</b> Flexible layouts & optimization</p>
+      <ul>
+        <li><b>ConstraintLayout</b>
+          <ul>
+            <li>Basics: constraints, margin, padding</li>
+            <li>Advanced: chains, guidelines, barriers, bias</li>
+            <li>Performance vs LinearLayout nesting</li>
+          </ul>
+        </li>
+        <li><b>TableLayout / GridLayout</b> → forms, calculators, dashboards</li>
+        <li><b>CoordinatorLayout</b>
+          <ul>
+            <li>CollapsingToolbarLayout (scrolling effects)</li>
+            <li>AppBarLayout behavior</li>
+          </ul>
+        </li>
+        <li><b>Optimization Tools</b>
+          <ul>
+            <li><code>&lt;include&gt;</code> tag</li>
+            <li><code>&lt;merge&gt;</code> tag</li>
+            <li>ViewStub (lazy load)</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Practice Tasks:</h3>
+      <div class="task">Make a responsive registration form with ConstraintLayout</div>
+      <div class="task">Make a Calculator UI using GridLayout</div>
+      <div class="task">Create a Collapsing Toolbar with scrolling content</div>
+      <div class="task">Optimize a nested layout using merge and include</div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase">
+      <h2>Phase 3 → Material Components (Modern UI Skeleton)</h2>
+      <p><b>Goal:</b> Real-world app skeleton (navigation, lists, tabs)</p>
+      <ul>
+        <li><b>AppBar & Toolbar</b> → ActionBar vs Toolbar, menus, icons</li>
+        <li><b>Navigation</b>
+          <ul>
+            <li>BottomNavigationView (fixed vs shifting)</li>
+            <li>NavigationDrawer (header + menu)</li>
+          </ul>
+        </li>
+        <li><b>Lists</b>
+          <ul>
+            <li>RecyclerView (Adapter, ViewHolder, LayoutManagers)</li>
+            <li>DiffUtil, ListAdapter (teaching-level optimization)</li>
+          </ul>
+        </li>
+        <li><b>Other Components</b>
+          <ul>
+            <li>FloatingActionButton (FAB)</li>
+            <li>TabLayout + ViewPager2</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Practice Tasks:</h3>
+      <div class="task">Make a YouTube-like UI (Toolbar + BottomNavigation + RecyclerView)</div>
+      <div class="task">Build a WhatsApp-like Tab navigation</div>
+      <div class="task">Make a shopping cart with RecyclerView</div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="phase">
+      <h2>Phase 4 → Advanced UI (Customization & Styling)</h2>
+      <p><b>Goal:</b> Custom controls & theming for production</p>
+      <ul>
+        <li><b>Custom Views</b> → extend View/ViewGroup, override onDraw(), onMeasure()</li>
+        <li><b>Drawables & Styles</b>
+          <ul>
+            <li>Shape drawable (rounded, gradients)</li>
+            <li>StateList drawable (button press)</li>
+            <li>Ripple effect</li>
+          </ul>
+        </li>
+        <li><b>Styles vs Themes vs Attributes</b> (Dark Mode support)</li>
+        <li><b>Motion & Animations</b>
+          <ul>
+            <li>Property Animation (ObjectAnimator, AnimatorSet)</li>
+            <li>MotionLayout</li>
+            <li>Transitions</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Practice Tasks:</h3>
+      <div class="task">Make a custom rating bar (stars filled with gradient)</div>
+      <div class="task">Create a theme switcher (light/dark mode toggle)</div>
+      <div class="task">Animate a button expand/collapse with MotionLayout</div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="phase">
+      <h2>Phase 5 → Modern UI (Jetpack Compose)</h2>
+      <p><b>Goal:</b> Future-ready declarative UI</p>
+      <ul>
+        <li><b>Basics of Compose</b> → Composable functions, State, Recomposition</li>
+        <li><b>Layouts</b> → Column, Row, Box</li>
+        <li><b>Material 3 (Compose)</b>
+          <ul>
+            <li>Scaffold (AppBar, FAB, Drawer, BottomNav)</li>
+            <li>LazyColumn / LazyRow</li>
+          </ul>
+        </li>
+        <li><b>Theming</b> → Material3 dynamic colors, Typography, Shapes</li>
+      </ul>
+      <h3>Practice Tasks:</h3>
+      <div class="task">Make a Todo app in Jetpack Compose</div>
+      <div class="task">Build Instagram feed UI with LazyColumn</div>
+      <div class="task">Create a music player UI with Scaffold</div>
+    </div>
+
+    <!-- Pro Tip -->
+    <div class="phase">
+      <h2>🎯 Teacher-Level Pro Tip</h2>
+      <p>Students ko <b>comparison</b> sikhao:</p>
+      <ul>
+        <li>LinearLayout vs ConstraintLayout</li>
+        <li>ListView vs RecyclerView</li>
+        <li>XML UI vs Jetpack Compose</li>
+      </ul>
+      <div class="note">Comparison hi deep understanding ka asli tool hai ✅</div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Android Teaching Guide | Full UI Roadmap
+  </footer>
+</body>
+</html>

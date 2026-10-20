@@ -1,0 +1,148 @@
+﻿@model Account.Models.UserClass
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var uImage = HttpContextAccessor.HttpContext.Session.GetString("UserImage");
+    var cImage = HttpContextAccessor.HttpContext.Session.GetString("ClientImage");
+    var FullName = HttpContextAccessor.HttpContext.Session.GetString("ClientFullName");
+
+    var Uid = HttpContextAccessor.HttpContext.Session.GetInt32("UserId");
+    var Cid = HttpContextAccessor.HttpContext.Session.GetInt32("ClientId");
+
+    var image = string.Empty; string act = "Index"; string con = "Home";
+    string imgact = "Index"; string imgcon = "Home";
+
+    if (Uid != null) { image = uImage; act = "Dashboard"; con = "User"; imgact = "EditProfile"; imgcon = "FProfile"; }
+    if (Cid != null) { image = cImage; act = "Index"; con = "Client"; imgact = "Edit"; imgcon = "Client"; }
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderSection("Scripts", required: false)
+<style>
+    .dashboard-card {
+        border-left: 4px solid var(--primary-color);
+    }
+
+        .dashboard-card.success {
+            border-left-color: #198754;
+        }
+
+        .dashboard-card.info {
+            border-left-color: #0dcaf0;
+        }
+
+    .sidebar-link {
+        transition: all 0.2s;
+        border-radius: 8px;
+    }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background-color: var(--primary-subtle);
+            color: var(--primary-color) !important;
+            font-weight: 500;
+        }
+</style>
+
+<div class="container-fluid py-4 px-4">
+
+    <div class="row g-4">
+
+        <!-- Sidebar -->
+        <div class="col-lg-3 col-xl-2 d-none d-lg-block">
+
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-3 sticky-top"
+                 style="top: 100px; z-index: 0;">
+
+                <div class="text-center mb-4 mt-2">
+
+                    <img src="@cImage"
+                         alt="Profile"
+                         class="rounded-circle img-thumbnail shadow-sm mb-2"
+                         style="width: 80px; height: 80px;">
+
+                    <h5 class="fw-bold mb-0">
+                        @FullName
+                    </h5>
+
+                    <span class="badge bg-primary-subtle text-primary rounded-pill mt-1">
+                        Client
+                    </span>
+                </div>
+
+                <ul class="nav flex-column gap-2">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark sidebar-link active px-3 py-2"
+                           asp-controller="Client"
+                           asp-action="Index">
+
+                            <i class="fas fa-home fa-fw me-2 text-muted"></i>
+                            Overview
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark sidebar-link px-3 py-2"
+                           asp-controller="Client"
+                           asp-action="PostJob">
+
+                            <i class="fas fa-briefcase fa-fw me-2 text-muted"></i>
+                            Post Job
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark sidebar-link px-3 py-2"
+                           href="#">
+
+                            <i class="fas fa-file-invoice-dollar fa-fw me-2 text-muted"></i>
+                            Bids Received
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark sidebar-link px-3 py-2"
+                           asp-controller="Client"
+                           asp-action="FindTalent">
+
+                            @* <i class="fas fa-envelope fa-fw me-2 text-muted"></i> *@
+                            <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                            Find Talent
+
+                           
+                        </a>
+                    </li>
+
+                    <li class="nav-item mt-4">
+                        <a class="nav-link text-dark sidebar-link px-3 py-2"
+                           asp-controller="Client"
+                           asp-action="Profile">
+
+                            <i class="fas fa-cog fa-fw me-2 text-muted"></i>
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item mt-4">
+                        <a class="nav-link text-danger sidebar-link px-3 py-2"
+                           asp-action="Logout" asp-controller="Authentication">
+                            <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+                            Logout
+                        </a>
+                    </li>
+
+                    
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT AREA -->
+        <div id="content" class="col-lg-9 col-xl-10">
+            @RenderBody()
+        </div>
+
+    </div>
+</div>

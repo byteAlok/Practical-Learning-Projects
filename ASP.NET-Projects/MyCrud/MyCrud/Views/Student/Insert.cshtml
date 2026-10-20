@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Insert";
+}
+
+<div class="row m-0 p-0">
+    <div class="col-sm"></div>
+    <div class="col-sm-6 p-4">
+
+        <h2 class="text-center text-primary mb-2">Registration Form</h2>
+
+        @using (Html.BeginForm("../Student/Insert", "Student", FormMethod.Post))
+        {
+            @Html.Label("Name", "Name")
+            @Html.TextBox("Name", null, new { @class = "form-control mb-3", placeholder = "Your Full Name" })
+
+            @Html.Label("Email", "Email")
+            @Html.TextBox("Email", null, new { @class = "form-control mb-3", placeholder = "Your Email" })
+
+            @Html.Label("Address", "Address")
+            @Html.TextBox("Address", null, new { @class = "form-control mb-3", placeholder = "Your Address" })
+
+            <input type="submit" class="form-control text-light bg-primary" />
+        }
+
+        @ViewBag.msg
+
+        @ViewBag.Name
+        @ViewBag.Email
+        @ViewBag.Address
+
+    </div>
+    <div class="col-sm"></div>
+</div>
+

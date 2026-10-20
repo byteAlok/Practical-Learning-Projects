@@ -1,0 +1,15 @@
+﻿@using WebApplication2.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form>
+    <input type="text" placeholder="Enter City Name" name="cityName"/>
+    <input type="submit"/>
+</form>
+
+<h2>City : @Model.City</h2>
+<h2>Temperature : @Model.Temp</h2>
+<h2>Description : @Model.Desc</h2>

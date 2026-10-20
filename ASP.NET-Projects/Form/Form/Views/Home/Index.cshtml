@@ -1,0 +1,40 @@
+﻿@model Form.Models.MyForm
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(model => model.Id)
+        @Html.TextBoxFor(model => model.Id)
+        @Html.ValidationMessageFor(model => model.Id)
+
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Address)
+        @Html.TextAreaFor(model => model.Address)
+        @Html.ValidationMessageFor(model => model.Address)
+
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Number)
+        @Html.TextBoxFor(model => model.Number)
+        @Html.ValidationMessageFor(model => model.Number)
+
+    </p>
+    <input type="submit" value="Submit"/>
+}

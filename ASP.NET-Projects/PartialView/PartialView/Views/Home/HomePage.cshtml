@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>HomePage</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("FullName")
+    @Html.TextBox("FullName")
+    @Html.ValidationMessage("vFullName", new {@class="text-danger"})
+
+    <br />
+
+    @Html.Label("Email")
+    @Html.TextBox("Email")
+    @Html.ValidationMessage("vEmail", new { @class = "text-danger" })
+
+    <br />
+
+    @Html.Label("Phone")
+    @Html.TextBox("Phone")
+    @Html.ValidationMessage("vPhone", new { @class = "text-danger" })
+
+    <br />
+    <input type="submit" value="Submit" />
+
+}

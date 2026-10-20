@@ -1,0 +1,40 @@
+﻿@using Crud3.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center text-success fs-2">Employee Table</h2>
+
+@Html.ActionLink("+ Insert New Employee", "../Home/Insert", "Home", new { @class = "btn border border-2 border-success text-success" })
+<h3 class="fs-4">@TempData["Msg"]</h3>
+<table class="table table-success mt-2 mb-4">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Employee Address</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (Employee Em in Model)
+    {
+        <tr>
+            <td>@Em.empid</td>
+            <td>@Em.name</td>
+            <td>@Em.email</td>
+            <td>@Em.address</td>
+            <td>
+
+                @Html.ActionLink("Update", "Update", "Home",
+                new { id = Em.empid }, new { @class = "btn bg-primary text-white" })
+
+                @Html.ActionLink(
+                    "Delete",
+                    "Delete",
+                    new { id = Em.empid },
+                    new { @class = "btn bg-danger text-white", onclick = "return confirm('Are you sure you want to delete this record?');" }
+                )
+
+            </td>
+        </tr>
+    }
+</table> 

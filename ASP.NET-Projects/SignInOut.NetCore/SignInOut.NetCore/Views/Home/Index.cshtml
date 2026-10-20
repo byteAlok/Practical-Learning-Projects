@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Index";
+    var session = HttpContextAccessor.HttpContext.Session;
+}
+
+<h1>Welcome</h1>
+
+<p>UserId: @session.GetString("UserId")</p>
+<p>Name: @session.GetString("Name")</p>
+<p>Username: @session.GetString("Uname")</p>
+<p>Password: @session.GetString("Upass")</p>
+
+<a href="/Authentication/Logout">Logout</a>

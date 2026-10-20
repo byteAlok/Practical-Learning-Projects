@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<h2>Welcome</h2>
+
+<p>UserName : @Session["Uname"]</p>
+<p>UserId : @Session["Id"]</p>
+
+@{
+    if (Session["Uname"] == null)
+    {
+        <form action="Login" method="post">
+            <input type="submit" value="Login" />
+        </form>
+    }
+}
+
+
+@{
+    if (Session["Uname"] != null)
+    {
+        <form action="Logout" method="post">
+            <input type="submit" value="Logout" />
+        </form>
+    }
+}

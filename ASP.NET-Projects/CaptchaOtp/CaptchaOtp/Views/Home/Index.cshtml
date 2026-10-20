@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h3>Custom Captcha Demo</h3>
+
+<form asp-action="Submit" asp-controller="Home" method="post">
+    <div>
+        <label>Enter Captcha:</label><br />
+        <img src="/Captcha/Generate" id="captchaImg" alt="Captcha" style="border:1px solid #ccc;" />
+        <button type="button" onclick="reloadCaptcha()">↻ Refresh</button><br />
+        <input type="text" name="CaptchaInput" required placeholder="Enter Captcha" />
+    </div>
+    <button type="submit">Verify</button>
+</form>
+
+<script>
+    function reloadCaptcha() {
+        document.getElementById("captchaImg").src = "/Captcha/Generate?rand=" + Math.random();
+    }
+</script>
+
+@if (ViewBag.Error != null)
+{
+    <div style="color:red">@ViewBag.Error</div>
+}
+@if (ViewBag.Message != null)
+{
+    <div style="color:green">@ViewBag.Message</div>
+}
+

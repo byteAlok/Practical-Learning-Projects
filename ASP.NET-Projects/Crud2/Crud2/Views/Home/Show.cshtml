@@ -1,0 +1,26 @@
+﻿@using Crud2.Models
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+<table border="0" cellpadding="10">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Employee Address</th>
+    </tr>
+
+    @foreach (Program cs in Model)
+            {
+                <tr>
+                    <td>@cs.empid</td>
+                    <td>@cs.name</td>
+                    <td>@cs.email</td>
+                    <td>@cs.address</td>
+                </tr>
+            }
+
+</table>

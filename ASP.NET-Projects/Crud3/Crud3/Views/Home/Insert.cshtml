@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Insert";
+}
+
+<h2 class="text-center text-primary fs-2">Insertion Form</h2>
+
+<div class="row m-0 p-0">
+    <div class="col-sm"></div>
+    <div class="col-sm-6">
+        <form method="post">
+
+            <label>Name</label>
+            <input type="text" placeholder="Enter Name" name="name" class="form-control mb-2" />
+            <label>Email</label>
+            <input type="text" placeholder="Enter Email" name="email" class="form-control mb-2" />
+            <label>Address</label>
+            <input type="text" placeholder="Enter Address" name="address" class="form-control mb-2" />
+
+            <input type="submit" value="Submit" class="form-control text-white bg-primary" />
+
+            <p>@ViewBag.Msg</p>
+        </form>
+        @Html.ActionLink("Show Employee Table", "../Home/Index", "Home", new { @class = "btn bg-success text-white" })
+
+    </div>
+    <div class="col-sm"></div>
+</div>

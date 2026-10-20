@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* background-color: black;*/
+
+
+        }
+
+        #d1 {
+            /* background-color: lightblue;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+            height: 30vh;
+
+
+        }
+
+        h1 {
+            display: inline-block;
+        }
+
+        span,
+        h1 {
+            font-size: 50px;
+        }
+
+        #d2,
+        #h {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        button {
+            margin: 3px;
+            padding: 5px;
+            width: 75px;
+            border-radius: 15px;
+            border: none;
+            background-color: rgb(2, 6, 128);
+            color: aliceblue;
+            font-weight: 700;
+        }
+
+        #box {
+            width: 400px;
+            background-color: lightblue;
+            /*border: 2px solid red;*/
+            height: 200px;
+            border-radius: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="d1">
+        <div id="box">
+            <div id="h">
+                <h1 id="hour"> 0 </h1>
+                <span>:</span>
+                <h1 id="min"> 0 </h1>
+                <span>:</span>
+                <h1 id="second"> 0 </h1>
+            </div>
+
+            <div id="d2">
+                <button onclick='start()'>Start</button>
+                <button onclick="stop()">Stop</button>
+                <button onclick="reset()">Reset</button>
+
+
+            </div>
+        </div>
+
+    </div>
+    <h1 id="time"></h1>
+    <br>
+    <h1 id="date"></h1>
+</body>
+<script>
+    let a = 0
+    let min = 0
+    let hour = 0
+    let an = ''
+    function start() {
+        an = setInterval(function () {
+            if (a < 10)
+            {
+                document.getElementById("second").innerHTML = "0"+(++a)
+            }
+            else{
+                document.getElementById("second").innerHTML = ++a
+            }
+            
+            if (a == 60) {
+                min = min + 1
+                a = 0
+                document.getElementById("min").innerHTML = min
+
+            }
+            if (min == 60) {
+                hour = hour + 1
+                min = 0
+                document.getElementById("hour").innerHTML = hour
+            }
+            if (hour == 12) {
+                hour = 0
+            }
+        }, 1)
+
+    }
+    function stop() {
+        clearInterval(an)
+    }
+    function reset() {
+        a = 0
+        min = 0
+        hour = 0
+
+        document.getElementById("second").innerHTML = a
+        document.getElementById("hour").innerHTML = hour
+        document.getElementById("min").innerHTML = min
+    }
+
+    function dateCall() {
+        const date = new Date()
+        console.log(date)
+
+        let minute = date.getMinutes()
+        let hourr = date.getHours()
+        let sec = date.getSeconds()
+
+        document.getElementById("time").innerHTML = `Time ~ ${hourr} : ${minute} : ${sec}`
+
+        let month = ['Janaury', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        let yearr = date.getFullYear()
+        let mon = date.getMonth()
+        let weekk = date.getDay()
+        let day = date.getDate()
+        document.getElementById("date").innerHTML = `Date : ${day}, ${month[mon]}  ${yearr}`
+        console.log(yearr)
+        console.log(mon)
+        console.log(weekk)
+        console.log(day)
+    }
+    setInterval(dateCall, 1000)
+
+
+</script>
+
+</html>

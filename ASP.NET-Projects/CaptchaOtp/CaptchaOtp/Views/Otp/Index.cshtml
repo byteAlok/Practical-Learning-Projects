@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "OTP Demo";
+}
+
+<h2>OTP Demo</h2>
+
+<div style="margin-bottom:20px;">
+    <!-- Button to generate OTP -->
+    <form asp-action="GenerateOTP" method="get">
+        <button type="submit">Generate OTP</button>
+    </form>
+</div>
+
+@if (ViewBag.OTP != null)
+{
+    <p><strong>Generated OTP (for testing only):</strong> @ViewBag.OTP</p>
+}
+
+<div style="margin-top:20px;">
+    <!-- OTP Verification Form -->
+    <form asp-action="VerifyOTP" method="post">
+        <label>Enter OTP:</label>
+        <input type="text" name="otp" required />
+        <button type="submit">Verify OTP</button>
+    </form>
+</div>
+
+@if (ViewBag.Message != null)
+{
+    <p style="color:red;"><strong>@ViewBag.Message</strong></p>
+}

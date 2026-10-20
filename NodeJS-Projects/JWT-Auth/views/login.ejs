@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <%- include('nav') %>
+
+        <h2>Login Page</h2>
+
+        <form id="loginForm">
+
+            <input type="text" name="username" placeholder="Username" required>
+
+            <input type="password" name="password" placeholder="Password" required>
+
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <script>
+
+            const form =
+                document.getElementById('loginForm');
+
+            form.addEventListener(
+                'submit',
+                async function (e) {
+                    e.preventDefault();
+
+                    const formData =
+                        new FormData(form);
+
+                    const body = {
+                        username:
+                            formData.get('username'),
+
+                        password:
+                            formData.get('password'),
+
+                        role:
+                            formData.get('role')
+                    };
+
+                    const response =
+                        await fetch('/login', {
+
+                            method: 'POST',
+
+                            headers: {
+                                'Content-Type':
+                                    'application/json'
+                            },
+
+                            body:
+                                JSON.stringify(body)
+                        });
+
+                    const data =
+                        await response.json();
+
+                    if (response.ok) {
+                        localStorage.setItem(
+                            'token',
+                            data.token
+                        );
+
+                        if (data.role === 'admin') {
+                            window.location =
+                                '/admin';
+                        }
+                        else {
+                            window.location =
+                                '/user';
+                        }
+                    }
+                    else {
+                        document
+                            .getElementById('message')
+                            .innerText =
+                            data.message;
+                    }
+                }
+            );
+
+        </script>
+
+</body>
+
+</html>

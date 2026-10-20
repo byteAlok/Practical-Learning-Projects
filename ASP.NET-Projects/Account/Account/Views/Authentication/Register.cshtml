@@ -1,0 +1,102 @@
+﻿@model Account.Models.UserClass
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container min-vh-100 d-flex align-items-center justify-content-center py-5 mt-2">
+    <div class="card shadow-lg border-0 rounded-4 overflow-hidden" style="max-width: 900px; width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-5 bg-primary d-none d-md-flex align-items-center justify-content-center p-5 text-white flex-column position-relative CTA-section">
+                <div class="position-relative z-1 text-center">
+                    <i class="fas fa-users-cog fa-3x mb-3 text-white"></i>
+                    <h2 class="fw-bold fs-2 mb-3">Join the Community</h2>
+                    <p class="text-white-50">Create an account to start your journey towards economic independence or to find the perfect skilled talent.</p>
+                </div>
+            </div>
+            <div class="col-md-7 p-4 p-lg-5">
+                <div class="text-center mb-4">
+                    <h3 class="fw-bold text-dark">Create an Account</h3>
+                    <p class="text-muted small">Fill in the details below to complete your registration</p>
+                </div>
+
+                <form asp-controller="Authentication" asp-action="Register" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input asp-for="FullName" class="form-control" placeholder="First Name" required>
+                                <label asp-for="FullName">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input asp-for="Email" class="form-control" placeholder="name@example.com" required>
+                                <label asp-for="Email">name@example.com</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="mb-3 role-selector">
+                        <label class="form-label text-muted small fw-bold">I want to join as a:</label>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" asp-for="Role" value="Freelancer" id="roleFreelancer" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary w-100 py-2 border rounded" for="roleFreelancer">Freelancer</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" asp-for="Role" value="Client" id="roleClient" autocomplete="off">
+                                <label class="btn btn-outline-primary w-100 py-2 border rounded" for="roleClient">Client</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input asp-for="Password" type="password" class="form-control" placeholder="Password" required>
+                                <label asp-for="Password">Password</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password" required>
+                                <label asp-for="ConfirmPassword">Confirm Password</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" name="CaptchaInput" class="form-control" placeholder="Enter CAPTCHA" required>
+                                <label >Enter CAPTCHA</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <img src="/Captcha/Generate" id="captchaImg" alt="CAPTCHA" class="rounded">
+                                <p class="@(TempData["capMsg"] == "Captcha Verified!" ? "text-success" : "text-danger")">@TempData["capMsg"]</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                    
+
+                   
+
+                    <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold mb-3 shadow-sm" type="submit">Sign Up</button>
+
+                    <div class="text-center mt-3">
+                        <p class="text-muted small">Already have an account? <a asp-controller="Account" asp-action="Login" class="text-primary fw-bold text-decoration-none">Sign in</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<CrudWithImages_Core_.Models.UserClass>
+
+@{
+    ViewData["Title"] = "ReadTable";
+}
+
+<h1>ReadTable</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-stiped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRegisterDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserExist)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserDOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRegisterDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserExist)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Update", "User", new {  id=item.UserId }) |
+                @Html.ActionLink("Delete", "Delete", "User", new {  id=item.UserId  }) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

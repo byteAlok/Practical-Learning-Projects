@@ -1,0 +1,405 @@
+﻿@model Account.Models.JobPostClass
+
+@{
+    ViewData["Title"] = "Job Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+
+<div class="container py-5">
+
+    <div class="row">
+
+        <!-- Main Job Content -->
+        <div class="col-lg-8 mb-4">
+
+            <a href="javascript:history.back()"
+               class="text-decoration-none text-muted mb-3 d-inline-block">
+
+                <i class="fas fa-arrow-left me-1"></i>
+                Back
+            </a>
+
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+
+                        <h2 class="fw-bold mb-0">
+                            @Model.JobTitle
+                        </h2>
+
+                        <span class="badge bg-primary-subtle text-primary border rounded-pill px-3 py-2 fs-6">
+                            @Model.JobCategory
+                        </span>
+
+                    </div>
+
+                    <div class="text-muted small mb-4 d-flex gap-3 flex-wrap">
+
+                        <span>
+                            <i class="far fa-clock me-1"></i>
+                            Posted @Model.CreatedAt.ToString("dd MMM yyyy")
+                        </span>
+
+                        <span>
+                            <i class="fas fa-map-marker-alt me-1 text-primary"></i>
+                            @Model.LocationType
+                        </span>
+
+                        <span>
+                            <i class="fas fa-tag me-1 text-success"></i>
+                            Fixed Price: ₹@Model.Budget
+                        </span>
+
+                        @if (Model.DeliveryTime != null)
+                        {
+                            <span>
+                                <i class="fas fa-calendar-alt me-1 text-danger"></i>
+                                Due: @Model.DeliveryTime.Value.ToString("dd MMM yyyy")
+                            </span>
+                        }
+
+                    </div>
+
+                    <h5 class="fw-bold mb-3 border-bottom pb-2">
+                        Job Description
+                    </h5>
+
+                    <p class="lh-lg text-dark mb-4">
+                        @Model.JobDescription
+                    </p>
+
+                    <div class="bg-light p-3 rounded-3 mt-5">
+
+                        <h6 class="fw-bold mb-2">
+                            Skills Required
+                        </h6>
+
+                        <div class="d-flex flex-wrap gap-2">
+
+                            <span class="badge bg-white text-dark border p-2">
+                                @Model.JobCategory
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Submit Proposal -->
+            <div class="card border-0 shadow-sm rounded-4 border-top border-primary border-4 mt-5">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <h4 class="fw-bold mb-4">
+                        Submit a Proposal
+                    </h4>
+
+                    <form asp-action="SubmitBid" method="post">
+
+                        <input type="hidden"
+                               name="jobPostId"
+                               value="@Model.Id" />
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+                                Your Proposed Amount (₹)
+                            </label>
+
+                            <input type="number"
+                                   name="amount"
+                                   class="form-control bg-light"
+                                   placeholder="e.g. 1000"
+                                   required>
+
+                            <div class="form-text">
+                                Client budget is ₹@Model.Budget
+                            </div>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+                                Cover Letter / Why should client hire you?
+                            </label>
+
+                            <textarea name="coverLetter"
+                                      class="form-control bg-light"
+                                      rows="5"
+                                      placeholder="Write your proposal..."
+                                      required></textarea>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-primary btn-lg rounded-pill px-5 fw-bold shadow-sm">
+
+                            Submit Bid
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- Sample Bids -->
+            <div class="mt-5">
+
+                <h4 class="fw-bold mb-3">
+                    Proposals Received (3)
+                </h4>
+
+                <!-- Bid 1 -->
+                <div class="card border-0 shadow-sm rounded-4 mb-3">
+
+                    <div class="card-body p-4">
+
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+
+                            <div class="d-flex align-items-center">
+
+                                <img src="https://ui-avatars.com/api/?name=Amina+Khan&background=d81b60&color=fff"
+                                     alt="Freelancer"
+                                     width="50"
+                                     height="50"
+                                     class="rounded-circle me-3">
+
+                                <div>
+
+                                    <h6 class="fw-bold mb-0">
+                                        <a href="#"
+                                           class="text-dark text-decoration-none">
+
+                                            Amina Khan
+                                        </a>
+                                    </h6>
+
+                                    <div class="text-warning small">
+
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+
+                                        4.8
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="text-end">
+
+                                <h5 class="fw-bold text-primary mb-0">
+                                    ₹1100
+                                </h5>
+
+                                <small class="text-muted">
+                                    Proposed Rate
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <p class="text-muted small">
+                            Hello! I have experience in bridal stitching and can complete this work professionally.
+                        </p>
+
+                        <div class="d-flex gap-2 mt-3">
+
+                            <button class="btn btn-sm btn-primary rounded-pill px-3">
+                                Accept & Hire
+                            </button>
+
+                            <a href="#"
+                               class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+
+                                View Profile
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Bid 2 -->
+                <div class="card border-0 shadow-sm rounded-4 mb-3">
+
+                    <div class="card-body p-4">
+
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+
+                            <div class="d-flex align-items-center">
+
+                                <img src="https://ui-avatars.com/api/?name=Fatima+Z&background=random&color=fff"
+                                     alt="Freelancer"
+                                     width="50"
+                                     height="50"
+                                     class="rounded-circle me-3">
+
+                                <div>
+
+                                    <h6 class="fw-bold mb-0">
+                                        <a href="#"
+                                           class="text-dark text-decoration-none">
+
+                                            Fatima Z.
+                                        </a>
+                                    </h6>
+
+                                    <div class="text-warning small">
+
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+
+                                        4.0
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="text-end">
+
+                                <h5 class="fw-bold text-primary mb-0">
+                                    ₹1200
+                                </h5>
+
+                                <small class="text-muted">
+                                    Proposed Rate
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <p class="text-muted small">
+                            I am interested in stitching your dress and can provide excellent quality work.
+                        </p>
+
+                        <div class="d-flex gap-2 mt-3">
+
+                            <button class="btn btn-sm btn-primary rounded-pill px-3">
+                                Accept & Hire
+                            </button>
+
+                            <a href="#"
+                               class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+
+                                View Profile
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+
+            <div class="card border-0 shadow-sm rounded-4 sticky-top"
+                 style="top: 100px;">
+
+                <div class="card-body p-4">
+
+                    <h5 class="fw-bold mb-4 pb-2 border-bottom">
+                        About the Client
+                    </h5>
+
+                    <div class="d-flex align-items-center mb-3">
+
+                        <img src="https://ui-avatars.com/api/?name=@(Model.Client != null ? Model.Client.FullName : "Client")&background=198754&color=fff"
+                             alt="Client"
+                             class="rounded-circle me-3"
+                             width="60"
+                             height="60">
+
+                        <div>
+
+                            <h6 class="fw-bold mb-0">
+                                @(Model.Client != null ? Model.Client.FullName : "Client")
+                            </h6>
+
+                            <p class="text-muted small mb-0">
+                                @(Model.Client != null ? Model.Client.Location : "Location")
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <div class="d-flex align-items-center text-warning mb-1">
+
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+
+                            <span class="text-dark ms-2 fw-bold">
+                                5.0
+                            </span>
+
+                        </div>
+
+                        <small class="text-muted">
+                            Trusted Client
+                        </small>
+
+                    </div>
+
+                    <ul class="list-unstyled text-muted small lh-lg">
+
+                        <li>
+                            <i class="far fa-calendar-alt text-primary me-2"></i>
+                            @(Model.Client != null ? Model.Client.CreatedAt : "Client")
+                        </li>
+
+                        <li>
+                            <i class="fas fa-briefcase text-primary me-2"></i>
+                            Active Client
+                        </li>
+
+                        <li>
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Payment Verified
+                        </li>
+
+                    </ul>
+
+                    <a href="#"
+                       class="btn btn-outline-primary w-100 rounded-pill mt-2">
+
+                        View Client Profile
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

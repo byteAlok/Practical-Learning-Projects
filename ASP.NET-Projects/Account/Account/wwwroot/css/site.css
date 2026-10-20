@@ -1,0 +1,41 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+#login {
+    background-image: linear-gradient(to right, var(--primary1), var(--primary2), var(--primary3)) !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    border: 1px solid #2d238c !important;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+    #login:hover {
+        background-image: linear-gradient(to right, var(--primary1), var(--primary2), var(--primary3)) !important;
+        color: #fff !important;
+        background-clip: padding-box;
+        -webkit-background-clip: padding-box;
+        -webkit-text-fill-color: white;
+        border: none;
+    }

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Standard Library Reference</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9ff;
+      color: #1c1c1c;
+      padding: 30px;
+    }
+    h1, h2 {
+      color: rgb(0, 92, 160);
+      text-align: center;
+    }
+    h2 {
+      margin-top: 40px;
+      border-bottom: 2px solid rgb(0, 92, 160);
+      padding-bottom: 5px;
+    }
+    .card {
+      background: white;
+      border-left: 4px solid rgb(0, 92, 160);
+      margin: 10px 0;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.03);
+    }
+    .card-title {
+      font-weight: bold;
+      color: #004d7a;
+    }
+    pre {
+      background: rgb(242, 248, 255);
+      padding: 15px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      margin-top: 10px;
+      border-left: 4px solid rgb(0, 92, 160);
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    .section {
+      margin-bottom: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Java Standard Libraries – Full Developer Reference</h1>
+
+  <div class="section">
+    <h2>1️⃣ Scanner (java.util.Scanner)</h2>
+    <p><strong>Purpose:</strong> Input from console or file</p>
+    <div class="card"><div class="card-title">nextInt(), nextFloat(), nextBoolean()</div>Reads respective data types</div>
+    <div class="card"><div class="card-title">next(), nextLine()</div>Reads string/token/line</div>
+    <div class="card"><div class="card-title">hasNext(), hasNextLine()</div>Checks if input is available</div>
+    <div class="card"><div class="card-title">useDelimiter(), useLocale()</div>Customize input parsing</div>
+    <div class="card"><div class="card-title">close()</div>Close input resource</div>
+    <pre><code>Scanner sc = new Scanner(System.in);
+int age = sc.nextInt();
+String name = sc.nextLine();</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ Arrays (java.util.Arrays)</h2>
+    <p><strong>Purpose:</strong> Utility class for array manipulation</p>
+    <div class="card"><div class="card-title">sort(), binarySearch()</div>Sorting and searching</div>
+    <div class="card"><div class="card-title">equals(), mismatch()</div>Comparison tools</div>
+    <div class="card"><div class="card-title">fill(), copyOf(), copyOfRange()</div>Modify or duplicate arrays</div>
+    <div class="card"><div class="card-title">toString()</div>Convert array to string</div>
+    <pre><code>int[] nums = {5, 1, 3};
+Arrays.sort(nums);
+System.out.println(Arrays.toString(nums));</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ Math (java.lang.Math)</h2>
+    <p><strong>Purpose:</strong> Mathematical computations</p>
+    <div class="card"><div class="card-title">abs(), max(), min()</div>Basic calculations</div>
+    <div class="card"><div class="card-title">sqrt(), cbrt(), pow()</div>Roots and exponents</div>
+    <div class="card"><div class="card-title">round(), ceil(), floor()</div>Rounding tools</div>
+    <div class="card"><div class="card-title">log(), log10(), random()</div>Advanced math</div>
+    <pre><code>double result = Math.pow(2, 3);
+int max = Math.max(10, 20);</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ String (No import needed)</h2>
+    <p><strong>Purpose:</strong> Immutable text objects</p>
+    <div class="card"><div class="card-title">charAt(), length(), substring()</div>Character access and slicing</div>
+    <div class="card"><div class="card-title">equals(), contains(), startsWith()</div>Comparison tools</div>
+    <div class="card"><div class="card-title">replace(), split(), matches()</div>Search & replace, regex</div>
+    <div class="card"><div class="card-title">toLowerCase(), toUpperCase(), trim()</div>Formatting helpers</div>
+    <pre><code>String s = "Hello Java";
+System.out.println(s.substring(0, 5));</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>5️⃣ File Handling (java.io.*)</h2>
+    <p><strong>Purpose:</strong> Read/write text files</p>
+    <div class="card"><div class="card-title">File</div>exists(), createNewFile(), delete()</div>
+    <div class="card"><div class="card-title">FileWriter</div>write(), close()</div>
+    <div class="card"><div class="card-title">BufferedReader</div>readLine(), close()</div>
+    <div class="card"><div class="card-title">PrintWriter</div>println(), printf()</div>
+    <pre><code>FileWriter fw = new FileWriter("data.txt");
+fw.write("Hello");
+fw.close();</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>6️⃣ Wrapper Classes</h2>
+    <p><strong>Purpose:</strong> Primitive to object and vice-versa</p>
+    <div class="card"><div class="card-title">Integer, Double, Boolean, etc.</div>parseX(), valueOf(), toString(), MAX_VALUE</div>
+    <pre><code>int x = Integer.parseInt("123");
+String s = String.valueOf(456);</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>7️⃣ System Class (java.lang.System)</h2>
+    <p><strong>Purpose:</strong> Environment and I/O tools</p>
+    <div class="card"><div class="card-title">System.in</div>Standard input (used with Scanner)</div>
+    <div class="card"><div class="card-title">System.out</div>Print to console</div>
+    <div class="card"><div class="card-title">System.err</div>Error messages</div>
+    <div class="card"><div class="card-title">currentTimeMillis()</div>Timing/logging</div>
+    <div class="card"><div class="card-title">exit(status)</div>Terminate app</div>
+    <div class="card"><div class="card-title">gc()</div>Run garbage collection</div>
+    <pre><code>System.out.println("Hello");
+System.exit(0);</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>8️⃣ Exception Handling</h2>
+    <p><strong>Purpose:</strong> Safe error control</p>
+    <div class="card"><div class="card-title">try { }</div>Wrap risky code</div>
+    <div class="card"><div class="card-title">catch (Exception e)</div>Handle error</div>
+    <div class="card"><div class="card-title">finally { }</div>Always run cleanup</div>
+    <div class="card"><div class="card-title">throw, throws</div>Raise exceptions</div>
+    <pre><code>try {
+  int x = 10 / 0;
+} catch (ArithmeticException e) {
+  System.out.println("Divide by zero!");
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>9️⃣ Boolean in Java</h2>
+    <p><strong>Purpose:</strong> Logical control and truth value management</p>
+    <div class="card"><div class="card-title">boolean primitive</div>Can store only true or false</div>
+    <div class="card"><div class="card-title">Boolean.parseBoolean(String)</div>Converts string to primitive boolean</div>
+    <div class="card"><div class="card-title">Boolean.valueOf(String)</div>Returns Boolean object from string</div>
+    <div class="card"><div class="card-title">Boolean.compare(x, y)</div>Compares two booleans</div>
+    <div class="card"><div class="card-title">Boolean.toString(boolean)</div>Converts boolean to string</div>
+    <div class="card"><div class="card-title">Boolean constants</div>Boolean.TRUE, Boolean.FALSE</div>
+    <pre><code>boolean isActive = true;
+if (isActive) {
+  System.out.println("Active!");
+}
+
+boolean flag = Boolean.parseBoolean("false");
+String boolStr = String.valueOf(true);
+
+System.out.println(true && false); // false
+System.out.println(!true);         // false</code></pre>
+  </div>
+
+🔥 Java OOPs — Phase 1: Introduction
+✅ What is OOP?
+Object-Oriented Programming ek aisi technique hai jisme real-world problems ko objects ke through model kiya jaata hai.
+
+🧱 Java OOPs ke 4 Pillars
+Pillar	Use Case
+Encapsulation	Data ko wrap karna (class ke andar)
+Inheritance	Reuse karna parent class ka code
+Polymorphism	Same method ka different behavior
+Abstraction	Only necessary info show karna
+
+🧠 Java OOPs Phase-wise Breakdown:
+📌 Phase 1: Basic Foundations (Abhi yahi start karenge)
+Class & Object
+
+Constructor
+
+this keyword
+
+Method Overloading
+
+Static keyword
+
+Access Modifiers (private, public, protected)
+
+📌 Phase 2: Core OOPs Concepts
+Inheritance (extends)
+
+super keyword
+
+Method Overriding
+
+final keyword
+
+Polymorphism (compile-time + run-time)
+
+📌 Phase 3: Advanced OOPs
+Abstract Classes
+
+Interfaces
+
+Encapsulation (private + getters/setters)
+
+Abstraction (abstract/interface)
+
+Packages & Access Control
+
+</body>
+</html>

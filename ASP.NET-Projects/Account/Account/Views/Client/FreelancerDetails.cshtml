@@ -1,0 +1,384 @@
+﻿@model Account.Models.ViewModels.FreelancerDashboardViewModel
+
+@{
+    ViewData["Title"] = "Freelancer Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .profile-header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, #a01045 100%);
+        height: 100px;
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    .profile-img-lg {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 5px solid white;
+        margin-top: -75px;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    }
+
+    .portfolio-card {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+        .portfolio-card:hover {
+            border-color: var(--primary-color) !important;
+            transform: translateY(-5px);
+        }
+
+    .rating-stars {
+        color: #ffc107;
+    }
+</style>
+
+<!-- Profile Header -->
+ <div class="profile-header"></div> 
+
+<div class="container mb-3">
+
+    <div class="row">
+
+        <!-- Left Column -->
+        <div class="col-lg-4 col-xl-3">
+
+            <div class="card border-0 shadow-sm rounded-4 text-center pb-4 mb-4">
+
+                <div class="d-flex justify-content-center">
+
+                    @if (!string.IsNullOrEmpty(Model.Freelancer.ProfilePhotoPath))
+                    {
+                        <img src="@Model.Freelancer.ProfilePhotoPath"
+                             alt="Profile"
+                             class="rounded-circle profile-img-lg bg-white position-relative">
+                    }
+                    else
+                    {
+                        <img src="https://ui-avatars.com/api/?name=@Model.Freelancer.FullName&background=d81b60&color=fff&size=256"
+                             alt="Profile"
+                             class="rounded-circle profile-img-lg bg-white position-relative">
+                    }
+
+                </div>
+
+                <div class="card-body mt-2">
+
+                    <h4 class="fw-bold mb-1">
+                        @Model.Freelancer.FullName
+                    </h4>
+
+                    <p class="text-muted mb-2">
+                        @Model.Freelancer.Skills
+                    </p>
+
+                    <div class="rating-stars mb-3">
+
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+
+                        <span class="text-dark fw-bold ms-1">
+                            @(Model.Freelancer.Rating ?? 0)
+                        </span>
+
+                        <span class="text-muted small">
+                            (24 reviews)
+                        </span>
+
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-2 mb-4">
+
+                        <span class="badge bg-light text-dark border px-3 py-2">
+                            <i class="fas fa-map-marker-alt text-primary me-1"></i>
+                            @Model.Freelancer.Location
+                        </span>
+
+                        <span class="badge bg-success-subtle text-success px-3 py-2">
+                            <i class="fas fa-check-circle me-1"></i>
+                            Verified
+                        </span>
+
+                    </div>
+
+                    <div class="d-grid gap-2">
+
+                        <a href="ay5332144@gmail.com"
+                           class="btn btn-primary rounded-pill shadow-sm">
+
+                            <i class="fas fa-envelope me-2"></i>
+                            Contact Me
+                        </a>
+
+                        <button class="btn btn-outline-primary rounded-pill">
+
+                            <i class="fas fa-heart me-2"></i>
+                            Save Profile
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Stats -->
+                <div class="card-footer bg-transparent border-top pt-3 pb-0 px-4">
+
+                    <div class="row text-center">
+
+                        <div class="col-6 border-end">
+
+                            <h5 class="fw-bold mb-0">14</h5>
+
+                            <small class="text-muted">
+                                Jobs Done
+                            </small>
+
+                        </div>
+
+                        <div class="col-6">
+
+                            <h5 class="fw-bold mb-0">98%</h5>
+
+                            <small class="text-muted">
+                                On Time
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Skills -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+                <div class="card-body">
+
+                    <h6 class="fw-bold mb-3 border-bottom pb-2">
+                        Skills
+                    </h6>
+
+                    <div class="d-flex flex-wrap gap-2">
+
+                        @if (!string.IsNullOrEmpty(Model.Freelancer.Skills))
+                        {
+                            var skills = Model.Freelancer.Skills.Split(',');
+
+                            foreach (var item in skills)
+                            {
+                                <span class="badge bg-white text-dark border rounded-pill px-3 py-2">
+                                    @item
+                                </span>
+                            }
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-lg-8 col-xl-9 pt-4">
+
+            <!-- About -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+                <div class="card-body p-4">
+
+                    <h5 class="fw-bold mb-3 border-bottom pb-2">
+                        About Me
+                    </h5>
+
+                    <p class="text-muted lh-lg">
+                        @Model.Freelancer.Bio
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Portfolio -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+
+                <div class="card-body p-4">
+
+                    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+
+                        <h5 class="fw-bold mb-0">
+                            Portfolio
+                            <span class="badge bg-light text-dark border ms-2">
+                                4 Posts
+                            </span>
+                        </h5>
+
+                        <a href="#"
+                           class="btn btn-sm btn-outline-primary rounded-pill">
+
+                            View All
+                        </a>
+
+                    </div>
+
+                    <div class="row g-4">
+
+                        @if (Model.PortfolioPosts != null && Model.PortfolioPosts.Any())
+                        {
+                            @foreach (var post in Model.PortfolioPosts)
+                            {
+                                <div class="col-md-6">
+
+                                    <div class="card h-100 border rounded-4 overflow-hidden portfolio-card shadow-sm">
+
+                                        <!-- Portfolio Image -->
+                                        @if (!string.IsNullOrEmpty(post.ImagePath))
+                                        {
+                                            <img src="@post.ImagePath"
+                                                 class="card-img-top"
+                                                 style="height: 220px; object-fit: cover;">
+                                        }
+                                        else
+                                        {
+                                            <img src="https://via.placeholder.com/600x400?text=Portfolio+Image"
+                                                 class="card-img-top"
+                                                 style="height: 220px; object-fit: cover;">
+                                        }
+
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+
+                                            <!-- Title -->
+                                            <h5 class="fw-bold mb-2">
+                                                @post.Title
+                                            </h5>
+
+                                            <!-- Description -->
+                                            <p class="text-muted small mb-3">
+
+                                                @(post.Description.Length > 120
+                                                    ? post.Description.Substring(0, 120) + "..."
+                                                    : post.Description)
+
+                                            </p>
+
+                                        </div>
+
+                                        <!-- Footer -->
+                                        <div class="card-footer bg-white border-top-0 d-flex justify-content-between align-items-center">
+
+                                            <small class="text-muted">
+                                                <i class="far fa-clock me-1"></i>
+
+                                                @post.CreatedAt.ToString("dd MMM yyyy")
+                                            </small>
+
+                                            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+                                                Portfolio
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="col-12">
+
+                                <div class="alert alert-light border rounded-4 shadow-sm text-center py-4">
+
+                                    <i class="fas fa-folder-open fa-2x text-muted mb-3"></i>
+
+                                    <h6 class="fw-bold">
+                                        No Portfolio Posts Yet
+                                    </h6>
+
+                                    <p class="text-muted mb-0">
+                                        This freelancer has not added any portfolio work.
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Reviews -->
+            <div class="card border-0 shadow-sm rounded-4">
+
+                <div class="card-body p-4">
+
+                    <h5 class="fw-bold mb-4 border-bottom pb-2">
+                        Client Reviews
+                    </h5>
+
+                    <div class="mb-4 pb-3 border-bottom">
+
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+
+                            <div class="d-flex align-items-center">
+
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Client&background=random"
+                                     width="40"
+                                     height="40"
+                                     class="rounded-circle me-3">
+
+                                <div>
+
+                                    <h6 class="fw-bold mb-0">
+                                        Sarah C.
+                                    </h6>
+
+                                    <div class="rating-stars small">
+
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+
+                                        <span class="text-muted ms-2">
+                                            June 15, 2026
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <p class="text-muted mb-0">
+                            Excellent work and timely delivery.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

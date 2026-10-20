@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
+
+<h1>Home Index Page</h1>
+
+<form method="post" action="/Home/GetCaptcha">
+
+    <img src="/Captcha/Image" alt="Captcha not found"/>
+
+    <input type="text" placeholder="Enter Captcha" name="cap"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<p>@ViewBag.Msg</p>
+

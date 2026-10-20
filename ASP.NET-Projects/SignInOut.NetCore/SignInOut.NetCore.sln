@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignInOut.NetCore", "SignInOut.NetCore\SignInOut.NetCore.csproj", "{388C934D-9814-4C27-B6EC-785D37DDF634}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{388C934D-9814-4C27-B6EC-785D37DDF634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{388C934D-9814-4C27-B6EC-785D37DDF634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{388C934D-9814-4C27-B6EC-785D37DDF634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{388C934D-9814-4C27-B6EC-785D37DDF634}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BC8495A-7A24-41E4-9C6C-FD5AEE157D3E}
+	EndGlobalSection
+EndGlobal

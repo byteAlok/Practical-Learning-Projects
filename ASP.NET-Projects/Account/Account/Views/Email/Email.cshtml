@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Email";
+}
+
+<h1>Send OTP</h1>
+
+@if (ViewBag.Email != null)
+{
+    <div class="alert alert-success">@ViewBag.Email</div>
+}
+
+<form asp-action="Email" asp-controller="Email" method="post">
+    <label>Enter your email</label><br />
+    <input type="email" name="userEmail" class="form-control" required />
+    <br />
+    <input type="submit" value="Send OTP" class="btn btn-primary" />
+</form>

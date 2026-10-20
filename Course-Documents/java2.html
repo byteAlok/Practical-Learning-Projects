@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Backend Roadmap (Java 8 to 21)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f8fc;
+      color: #222;
+      padding: 2rem;
+      line-height: 1.7;
+      max-width: 960px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #0b3d91;
+    }
+    .phase {
+      background: #e3f2fd;
+      border-left: 6px solid #0b3d91;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+    .tip {
+      background: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 0.8rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+    .complete {
+      background: #d0f0c0;
+      border-left: 5px solid #2e7d32;
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-top: 0.8rem;
+    }
+    .optional {
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Java Backend Developer Roadmap (Java 8 to 21)</h1>
+
+  <section class="phase">
+    <h2>Phase 1: Core Java (8 to 17)</h2>
+    <ul>
+      <li>OOP (Class, Object, Inheritance, Polymorphism, Encapsulation, Abstraction)</li>
+      <li>Constructors, this/super, Overloading & Overriding</li>
+      <li>Access Modifiers, static/final, abstract, interfaces</li>
+      <li>Exception Handling: try, catch, throw, finally</li>
+      <li>String & StringBuilder, Arrays</li>
+      <li>Collections: List, Set, Map, Queue, Iterator</li>
+      <li>File Handling: File, FileReader, FileWriter, Scanner</li>
+      <li>Lambda Expressions, Functional Interfaces</li>
+      <li>Streams API, forEach, map/filter/reduce</li>
+      <li>Optional Class, Date-Time API (LocalDate, etc.)</li>
+      <li>Default/Static Methods in Interfaces</li>
+      <li>Annotations, Inner Classes, Enums</li>
+      <li><b>Java 10:</b> var keyword</li>
+      <li><b>Java 13:</b> Text Blocks ("""multi-line""")</li>
+      <li><b>Java 14:</b> NullPointer hints</li>
+      <li><b>Java 16:</b> Records (DTOs), Pattern Matching (instanceof)</li>
+      <li><b>Java 17:</b> Sealed Classes, Switch Expressions</li>
+    </ul>
+    <div class="tip">Tip: Java 17 is LTS and mandatory for Spring Boot 3+</div>
+  </section>
+
+  <section class="phase">
+    <h2>Phase 2: JDBC + MySQL</h2>
+    <ul>
+      <li>Install MySQL, JDBC Driver</li>
+      <li>JDBC Architecture: DriverManager, Connection, Statement</li>
+      <li>CRUD: Insert, Read, Update, Delete</li>
+      <li>PreparedStatement for Security</li>
+      <li>DAO Pattern (Separation of Logic)</li>
+      <li>Simple CLI Project using Scanner + JDBC</li>
+    </ul>
+    <div class="complete">Console Project + Clean Code Practice = Complete!</div>
+  </section>
+
+  <section class="phase">
+    <h2>Phase 3: Spring Boot (Backend Framework)</h2>
+    <ul>
+      <li>Create Spring Boot App (start.spring.io)</li>
+      <li>Dependencies: Spring Web, Spring Data JPA, MySQL</li>
+      <li>CRUD APIs using REST Controllers</li>
+      <li>DTOs + Entity Mapping + Validation</li>
+      <li>@RequestMapping, @GetMapping, @PostMapping, etc.</li>
+      <li>Exception Handling with @ControllerAdvice</li>
+      <li>Spring Security + JWT (Login/Auth)</li>
+      <li>Lombok, ModelMapper, H2 DB</li>
+      <li>API Docs with Swagger/OpenAPI</li>
+      <li>Deployment to Railway / Render</li>
+    </ul>
+    <div class="tip">Tip: Use Java 17+ with Spring Boot 3 for full compatibility.</div>
+  </section>
+
+  <section class="phase">
+    <h2>Optional: Java 18 to Java 21 (Advanced Features)</h2>
+    <ul>
+      <li><b>Java 18:</b> Simple Web Server, UTF-8 default</li>
+      <li><b>Java 19:</b> Virtual Threads (Preview), Structured Concurrency</li>
+      <li><b>Java 20:</b> Scoped Values, Record Patterns (Preview)</li>
+      <li><b>Java 21:</b> Virtual Threads (Stable) ✅</li>
+      <li><b>Java 21:</b> Sequenced Collections (List/Map/Set with order)</li>
+      <li><b>Java 21:</b> Pattern Matching for switch (Final)</li>
+      <li><b>Java 21:</b> Record Patterns, String Templates (Preview)</li>
+    </ul>
+    <div class="optional">Optional for now, but adds cutting-edge Java concurrency and syntax improvements.</div>
+  </section>
+
+  <section>
+    <h3>🎯 Final Advice</h3>
+    <ul>
+      <li>Practice building real projects using Spring Boot + MySQL</li>
+      <li>Use latest Java LTS (Java 17 or Java 21)</li>
+      <li>Understand everything deeply. No shortcuts 🚀</li>
+    </ul>
+  </section>
+</body>
+</html>

@@ -1,0 +1,176 @@
+﻿
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var uImage = HttpContextAccessor.HttpContext.Session.GetString("UserImage");
+    var cImage = HttpContextAccessor.HttpContext.Session.GetString("ClientImage");
+    var FullName = HttpContextAccessor.HttpContext.Session.GetString("UserFullName");
+    var Skill = HttpContextAccessor.HttpContext.Session.GetString("UserSkill");
+    string rating = HttpContextAccessor.HttpContext.Session.GetString("UserRating");
+    string registerDate = HttpContextAccessor.HttpContext.Session.GetString("UserRegisterDate");
+
+    var Uid = HttpContextAccessor.HttpContext.Session.GetInt32("UserId");
+    var Cid = HttpContextAccessor.HttpContext.Session.GetInt32("ClientId");
+
+    var image = string.Empty; string act = "Index"; string con = "Home";
+    string imgact = "Index"; string imgcon = "Home";
+
+    if (Uid != null) { image = uImage; act = "Index"; con = "Freelancer"; imgact = "EditProfile"; imgcon = "FProfile"; }
+    if (Cid != null) { image = cImage; act = "Index"; con = "Client"; imgact = "Profile"; imgcon = "Client"; }
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@await RenderSectionAsync("Scripts", required: false)
+<style>
+    .dashboard-card {
+        border-left: 4px solid var(--primary-color);
+    }
+
+        .dashboard-card.success {
+            border-left-color: #198754;
+        }
+
+        .dashboard-card.warning {
+            border-left-color: #ffc107;
+        }
+
+    .sidebar-link {
+        transition: all 0.2s;
+        border-radius: 8px;
+    }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background-color: var(--primary-subtle);
+            color: var(--primary-color) !important;
+            font-weight: 500;
+        }
+
+    .portfolio-img {
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+</style>
+
+<div class="container-fluid py-4 px-4">
+
+    <div class="row g-4">
+
+        <!-- Sidebar -->
+        <div class="col-lg-3 col-xl-2 d-none d-lg-block">
+
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-3 sticky-top"
+                 style="top: 100px; z-index: 0;">
+
+                <div class="text-center mb-4 mt-2">
+
+                    @if (!string.IsNullOrEmpty(image))
+                    {
+                        <img src="@uImage"
+                             alt="Profile"
+                             class="rounded-circle img-thumbnail shadow-sm mb-2"
+                             style="width: 80px; height: 80px; object-fit: cover;">
+                    }
+                    else
+                    {
+                        <img src="https://ui-avatars.com/api/?name=@FullName&background=d81b60&color=fff"
+                             alt="Default Profile"
+                             class="rounded-circle img-thumbnail shadow-sm mb-2"
+                             style="width: 80px; height: 80px; object-fit: cover;">
+                    }
+
+                    <h5 class="fw-bold mb-0">
+                        @FullName
+                    </h5>
+
+                    <p class="text-muted small mb-1">
+                        @Skill
+                    </p>
+
+                    <div class="text-warning small mb-2">
+
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+
+                        <span class="text-dark ms-1">
+                            @rating
+                        </span>
+                    </div>
+                </div>
+
+                <ul class="nav flex-column gap-2">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark sidebar-link active px-3 py-2"
+                           asp-controller="Freelancer"
+                           asp-action="Index">
+
+                            <i class="fas fa-home fa-fw me-2 text-muted"></i>
+                            Overview
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark sidebar-link px-3 py-2" href="#">
+
+                            <i class="fas fa-gavel fa-fw me-2 text-muted"></i>
+                            My Bids
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark sidebar-link px-3 py-2" href="#">
+
+                            <i class="fas fa-briefcase fa-fw me-2 text-muted"></i>
+                            Active Contracts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark sidebar-link px-3 py-2"
+                           asp-controller="Freelancer"
+                           asp-action="Portfolio">
+
+                            <i class="fas fa-images fa-fw me-2 text-muted"></i>
+                            Portfolio
+                        </a>
+                    </li>
+
+                    
+
+                    <li class="nav-item mt-4">
+                        <a class="nav-link text-dark sidebar-link px-3 py-2" 
+                        asp-controller="FProfile" asp-action="Profile">
+
+                            <i class="fas fa-cog fa-fw me-2 text-muted"></i>
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-danger sidebar-link px-3 py-2"
+                           asp-action="Logout" asp-controller="Authentication">
+                            <i class="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+                            Logout
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-lg-9 col-xl-10">
+
+            @RenderBody()
+            
+
+        </div>
+
+    </div>
+
+</div>

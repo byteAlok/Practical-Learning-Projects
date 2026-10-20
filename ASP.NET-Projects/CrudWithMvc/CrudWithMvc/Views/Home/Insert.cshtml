@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Insert";
+}
+
+<h2>Insert</h2>
+
+<div class="row m-0 p-0">
+    <div class="col-sm"></div>
+    <div class="col-sm-6">
+
+        <form method="post">
+
+            <label>Product Name</label>
+            <input type="text" class="form-control" name="ProductName" placeholder="Product Name"/>
+            <label>Price</label>
+            <input type="text" class="form-control" name="Price" placeholder="Product Price"/>
+            <label>Cost</label>
+            <input type="text" class="form-control" name="Cost" placeholder="Product Cost"/>
+            <label>Quantity</label>
+            <input type="text" class="form-control" name="Qty" placeholder="Quantity"/>
+
+            <input type="submit" class="form-control"/>
+
+        </form>
+
+    </div>
+    <div class="col-sm">
+        @ViewBag.Msg
+    </div>
+</div>

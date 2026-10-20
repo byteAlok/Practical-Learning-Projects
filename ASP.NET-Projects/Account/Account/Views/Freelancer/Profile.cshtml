@@ -1,0 +1,329 @@
+﻿@model Account.Models.UserClass
+
+@{
+    ViewData["Title"] = "Freelancer Profile";
+}
+
+<style>
+    /* Premium Dashboard Styles */
+    body {
+        background-color: #f4f7f6;
+    }
+
+    .profile-banner {
+        height: 220px;
+        background: linear-gradient(135deg, #d81b60, #ff4081, #ff79b0);
+        border-radius: 1.25rem 1.25rem 0 0;
+        position: relative;
+    }
+
+    .profile-avatar-wrapper {
+        margin-top: -85px;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+    }
+
+    .profile-avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 6px solid #ffffff;
+        object-fit: cover;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+    }
+
+    .badge-skill {
+        font-size: 0.85rem;
+        padding: 0.55em 0.85em;
+        margin: 0.25em;
+        background-color: #f8f9fa;
+        color: #495057;
+        border: 1px solid #e9ecef;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+        .badge-skill:hover {
+            background-color: #d81b60;
+            color: #ffffff;
+            border-color: #d81b60;
+            transform: translateY(-2px);
+        }
+
+    .card-custom {
+        border: none;
+        border-radius: 1.25rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        background: #ffffff;
+    }
+
+    .text-theme {
+        color: #d81b60;
+    }
+
+    .btn-theme {
+        background-color: #d81b60;
+        color: white;
+        border: none;
+    }
+
+        .btn-theme:hover {
+            background-color: #ad144b;
+            color: white;
+        }
+
+    .btn-outline-theme {
+        color: #d81b60;
+        border-color: #d81b60;
+    }
+
+        .btn-outline-theme:hover {
+            background-color: #d81b60;
+            color: white;
+        }
+
+    .rating-stars i {
+        color: #ffc107;
+        font-size: 1.1rem;
+    }
+
+    .info-icon {
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+        border-radius: 50%;
+        color: #d81b60;
+        margin-right: 10px;
+    }
+
+    .form-control:focus, .form-select:focus {
+        border-color: #ff79b0;
+        box-shadow: 0 0 0 0.25rem rgba(216, 27, 96, 0.25);
+    }
+
+    .input-group-text {
+        border-right: none;
+    }
+
+    .form-control {
+        border-left: none;
+    }
+
+        .form-control:focus {
+            border-left: 1px solid #ff79b0;
+        }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+            <!-- Profile Details Card -->
+            <div class="card card-custom mb-5">
+                <div class="profile-banner"></div>
+                <div class="card-body px-5 pb-5">
+
+                    <div class="profile-avatar-wrapper mb-4">
+                        @if (string.IsNullOrEmpty(Model.ProfilePhotoPath))
+                        {
+                            <img src="https://ui-avatars.com/api/?name=@Model.FullName&background=d81b60&color=fff" alt="Profile Photo" class="profile-avatar" />
+                        }
+                        else
+                        {
+                            <img src="@Model.ProfilePhotoPath" alt="Profile Photo" class="profile-avatar" />
+                        }
+                    </div>
+
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold mb-1">@Model.FullName</h2>
+                        <p class="text-muted mb-2">
+                            <i class="fas fa-map-marker-alt me-1 text-theme"></i> @(string.IsNullOrEmpty(Model.Location) ? "Location not provided" : Model.Location)
+                        </p>
+
+                        <div class="rating-stars mb-4 d-flex justify-content-center align-items-center">
+                            @{
+                                int rating = Model.Rating > 0 ? (int)Math.Round((double)Model.Rating) : 0;
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    if (i < rating)
+                                    {
+                                        <i class="fas fa-star mx-1"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="far fa-star mx-1"></i>
+                                    }
+                                }
+                            }
+                            <span class="text-muted ms-2 fw-medium">(@Model.Rating)</span>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-3">
+                            <a asp-controller="Freelancer" asp-action="EditProfile" asp-route-id="@Model.Id" class="btn btn-outline-theme rounded-pill px-4 py-2 fw-bold shadow-sm">
+                                <i class="fas fa-user-edit me-2"></i> Edit Profile
+                            </a>
+                            <a asp-controller="Authentication" asp-action="Logout" class="btn btn-outline-danger rounded-pill px-4 py-2 fw-bold shadow-sm">
+                                <i class="fas fa-sign-out-alt me-2"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mt-2">
+                        <div class="col-md-7">
+                            <h5 class="fw-bold mb-3 d-flex align-items-center">
+                                <span class="info-icon"><i class="fas fa-user"></i></span> About Me
+                            </h5>
+                            <div class="text-muted rounded bg-light p-4 h-100" style="line-height: 1.8; font-size: 0.95rem;">
+                                @(string.IsNullOrEmpty(Model.Bio) ? "This freelancer hasn't added a bio yet." : Model.Bio)
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h5 class="fw-bold mb-3 d-flex align-items-center">
+                                <span class="info-icon"><i class="fas fa-info-circle"></i></span> Details
+                            </h5>
+                            <div class="bg-light rounded p-4 mb-4">
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li class="mb-3 d-flex align-items-center">
+                                        <i class="fas fa-envelope text-theme me-3 fs-5"></i>
+                                        <span class="text-break">@Model.Email</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-calendar-alt text-theme me-3 fs-5"></i>
+                                        <span>Member since @Model.CreatedAt.ToString("MMMM yyyy")</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h5 class="fw-bold mb-3 d-flex align-items-center">
+                                <span class="info-icon"><i class="fas fa-laptop-code"></i></span> Skills
+                            </h5>
+                            <div class="d-flex flex-wrap gap-1">
+                                @if (!string.IsNullOrEmpty(Model.Skills))
+                                {
+                                    var skills = Model.Skills.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                                    foreach (var skill in skills)
+                                    {
+                                        <span class="badge badge-skill rounded-pill shadow-sm">@skill.Trim()</span>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="text-muted small fst-italic">No skills listed</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Edit Profile Form Section -->
+            <div class="card card-custom mb-5">
+                <div class="card-header bg-white border-bottom py-4 px-5">
+                    <h4 class="mb-0 fw-bold text-theme">
+                        <i class="fas fa-sliders-h me-2"></i> Update Your Profile
+                    </h4>
+                </div>
+                <div class="card-body p-5">
+                    <form asp-controller="Freelancer" asp-action="EditProfile" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="row g-4 mb-4">
+                            <!-- Full Name -->
+                            <div class="col-md-6">
+                                <label asp-for="FullName" class="form-label fw-semibold">Full Name</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-user text-muted"></i></span>
+                                    <input asp-for="FullName" class="form-control border-start-0" placeholder="Enter your full name" required />
+                                    <div class="invalid-feedback">Please provide your full name.</div>
+                                </div>
+                                <span asp-validation-for="FullName" class="text-danger small mt-1 d-block"></span>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label asp-for="Email" class="form-label fw-semibold">Email Address</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-envelope text-muted"></i></span>
+                                    <input asp-for="Email" type="email" class="form-control border-start-0" placeholder="Enter your email" required />
+                                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                                </div>
+                                <span asp-validation-for="Email" class="text-danger small mt-1 d-block"></span>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="col-md-6">
+                                <label asp-for="Location" class="form-label fw-semibold">Location</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-map-marker-alt text-muted"></i></span>
+                                    <input asp-for="Location" class="form-control border-start-0" placeholder="e.g. New York, USA" />
+                                </div>
+                                <span asp-validation-for="Location" class="text-danger small mt-1 d-block"></span>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="col-md-6">
+                                <label asp-for="Skills" class="form-label fw-semibold">Skills</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-tools text-muted"></i></span>
+                                    <input asp-for="Skills" class="form-control border-start-0" placeholder="e.g. C#, HTML, CSS (comma separated)" />
+                                </div>
+                                <span asp-validation-for="Skills" class="text-danger small mt-1 d-block"></span>
+                            </div>
+                        </div>
+
+                        <!-- Bio -->
+                        <div class="mb-4">
+                            <label asp-for="Bio" class="form-label fw-semibold">Bio / About Me</label>
+                            <textarea asp-for="Bio" class="form-control rounded-3" rows="5" placeholder="Tell clients about your experience, expertise, and what makes you unique..."></textarea>
+                            <span asp-validation-for="Bio" class="text-danger small mt-1 d-block"></span>
+                        </div>
+
+                        <!-- Profile Photo Upload -->
+                        <div class="mb-5 bg-light p-4 rounded-3 border">
+                            <label for="profilePhotoUpload" class="form-label fw-semibold">Profile Photo</label>
+                            <input type="file" name="profilePhotoUpload" id="profilePhotoUpload" class="form-control" accept="image/*" />
+                            <div class="form-text text-muted mt-2">
+                                <i class="fas fa-info-circle me-1"></i> Upload a new photo to change your avatar. Recommended size: 400x400px. Max size: 2MB.
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-theme rounded-pill px-5 py-2 fw-bold shadow-sm">
+                                <i class="fas fa-save me-2"></i> Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Bootstrap 5 Form Validation Script
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+}

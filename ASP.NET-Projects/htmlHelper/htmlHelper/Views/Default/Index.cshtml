@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row m-0 p-0">
+    <div class="col-sm"></div>
+    <div class="col-sm-6 border rounded-3 p-4 mt-4 bg-light">
+
+        <h2 class="text-danger text-center mb-2">Registration Form</h2>
+
+        @Html.Label("Name")
+        @Html.TextBox("Enter Your Name", "", new { @class = "form-control mb-2", placeholder="Enter Name"})
+
+        @Html.Label("Email")
+        @Html.TextBox("Enter Your Name", "", new { @class = "form-control mb-2", placeholder = "Enter Email" })
+
+        @Html.Label("Phone")
+        @Html.TextBox("Enter Your Name", "", new { @class = "form-control mb-2", placeholder = "Enter Phone" })
+
+        @Html.Label("Address")
+        @Html.TextArea("sdf", "", new { @class = "form-control mb-3", placeholder = "Enter Address" })
+
+        <input type="submit" value="Submit" class="form-control bg-primary text-light"/>
+
+
+
+
+
+    </div>
+    <div class="col-sm"></div>
+</div>
+
+
+

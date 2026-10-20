@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeStore - Premium E-Commerce</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="bi bi-bag-heart-fill text-primary"></i> LuxeStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-primary position-relative" href="#">
+                            <i class="bi bi-cart"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider Section -->
+    <header class="hero-slider">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active hero-slide"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80');">
+                    <div
+                        class="container h-100 d-flex align-items-center justify-content-center text-center text-white">
+                        <div class="animate-up">
+                            <h1 class="display-3 fw-bold mb-4">Elevate Your Lifestyle</h1>
+                            <p class="lead mb-5">Discover our curated collection of premium products.</p>
+                            <a href="shop.html" class="btn btn-primary btn-lg rounded-pill px-5 shadow-lg">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item hero-slide"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80');">
+                    <div
+                        class="container h-100 d-flex align-items-center justify-content-center text-center text-white">
+                        <div class="animate-up">
+                            <h1 class="display-3 fw-bold mb-4">New Season Arrivals</h1>
+                            <p class="lead mb-5">Check out the latest trends and exclusive items.</p>
+                            <a href="shop.html" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-lg">View
+                                Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item hero-slide"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1920&q=80');">
+                    <div
+                        class="container h-100 d-flex align-items-center justify-content-center text-center text-white">
+                        <div class="animate-up">
+                            <h1 class="display-3 fw-bold mb-4">Exclusive Deals</h1>
+                            <p class="lead mb-5">Up to 50% off on selected premium items.</p>
+                            <a href="shop.html"
+                                class="btn btn-warning btn-lg rounded-pill px-5 shadow-lg text-dark fw-bold">Grab
+                                Deal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 card-hover">
+                        <i class="bi bi-truck display-4 text-primary mb-3"></i>
+                        <h5 class="fw-bold">Free Shipping & Returns</h5>
+                        <p class="text-muted">On all orders over $99. We make it easy for you.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 card-hover">
+                        <i class="bi bi-shield-check display-4 text-primary mb-3"></i>
+                        <h5 class="fw-bold">Secure Payment</h5>
+                        <p class="text-muted">100% secure payment with 256-bit encryption.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 card-hover">
+                        <i class="bi bi-headset display-4 text-primary mb-3"></i>
+                        <h5 class="fw-bold">24/7 Support</h5>
+                        <p class="text-muted">Our dedicated team is here to help you anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Join Our Newsletter</h2>
+            <p class="mb-4">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control rounded-start-pill py-3 px-4"
+                            placeholder="Enter your email" aria-label="Recipient's email">
+                        <button class="btn btn-dark rounded-end-pill px-4" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-bag-heart-fill text-primary"></i> LuxeStore</h5>
+                    <p class="text-white-50">Premium e-commerce destination for high-quality products. We ensure the
+                        best shopping experience for our customers.</p>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Shop</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="#" class="text-decoration-none text-white-50 hover-white">Electronics</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 hover-white">Fashion</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 hover-white">Home & Living</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 hover-white">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Help</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="#" class="text-decoration-none text-white-50 hover-white">Customer Service</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 hover-white">Returns & Exchanges</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none text-white-50 hover-white">Shipping Info</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 hover-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Contact Us</h6>
+                    <p class="text-white-50">123 Premium Street, Design City, DC 56789</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-decoration-none text-white-50 hover-white fs-5"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-decoration-none text-white-50 hover-white fs-5"><i
+                                class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-decoration-none text-white-50 hover-white fs-5"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-decoration-none text-white-50 hover-white fs-5"><i
+                                class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center text-white-50">
+                <small>&copy; 2026 LuxeStore. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

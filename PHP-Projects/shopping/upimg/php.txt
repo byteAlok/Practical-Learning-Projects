@@ -1,0 +1,93 @@
+String in php :
+
+	In php String is sequence of a character that can use to store and manipulate the text, Any thing is in double or single quotes that is string datatype in php.
+
+		$str = "Alok Maurya" or 'Alok Maurya';
+
+How to add(concate) to strings?
+	We can use dot(.) symbol to add two strings.
+
+Some important function in php?
+	1. strlen() : this is used to count the length of string.
+	2. trim() : this is used for remove any white space from start and end.
+	3. str_replace() : this function replace some character with some other character from string.
+	4. str_pos() : this function searches for a specific text within a string - if match is found then the function return the character position of the first match, if no match is found it will return false.
+	5. explod() : this function split the string into array.
+
+Array in php : 
+	It is a collection of various item it can hold many values in single array.
+
+How to chance specific element of an array?
+	array_Name[index] = value 
+
+Function in php ?
+	In php their are two type of function -----
+		a). Predefined 
+		b). User-Defined 
+
+How to create function : We can use function keyword like JavaScript.
+	There a two type of user defined function ----------
+		a). Parameterized
+		b). Non - parameterized 
+
+	In parameterized function their are declare inside the bracket after the function name. A parameter is a value you passed to a function or static.
+	
+	We can passed the value of the variable at the time of calling the function.
+
+QuestionS ------------------------------------------------
+
+1. create a udf to find largest number in three number
+2. create a parameterized udf to find even number
+3. create a udf to check given argument is palindrome or not
+4. create a udf to print counting
+5. create a udf to print fibbonacci series
+6. create an array and find the largest element in array
+..........................................................
+	
+Session?
+In php session is a way to store user specific details like login information detail, shopping card.
+That can be access across multiple page in php.
+
+Syntax to create session :
+
+<?php 
+	session-start() 
+?>
+
+<?php 
+	$-SESSION["name"] = "Alok Maurya"; 
+	$-SESSION["address"] = "Brahmasthan"; 
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	

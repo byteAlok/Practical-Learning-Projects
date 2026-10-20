@@ -1,0 +1,24 @@
+﻿@model InstallingCDNFILE.Models.Student
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="c:/users/alok\source\repos\installingcdnfile\installingcdnfile\wwwroot\twitter-bootstrap\css\bootstrap.min.css" rel="stylesheet" />
+<a href="c:\users\alok\source\repos\installingcdnfile\installingcdnfile\wwwroot\twitter-bootstrap\css\bootstrap.min.css.map">c:\users\alok\source\repos\installingcdnfile\installingcdnfile\wwwroot\twitter-bootstrap\css\bootstrap.min.css.map</a>
+
+<h1 class="bg-primary">Index</h1>
+
+<h1>ID : @Model.Id</h1>
+<h1>Name : @Model.Name</h1>
+<h1>Address : @Model.Address</h1>
+
+<form method="post">
+
+    <label>Id</label>
+    <input type="text" placeholder="Id" name="Id"/> 
+    <label>Name</label>
+    <input type="text" placeholder="Name" name="Name"/>
+    <label>Address</label>
+    <input type="text" placeholder="Address" name="Address"/>
+    <input type="submit" value="Submit"/>
+
+</form>

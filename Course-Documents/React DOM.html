@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Imports Cheat Sheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9fafb;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00737b;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #ab0069;
+        }
+
+        .block {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+
+        }
+
+        code {
+            color: #0b00aa;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 0.95em;
+            color: black;
+
+        }
+
+        .highlight {
+            color: #00a344;
+            font-weight: bold;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔥 Total 13 (8 + 5) : Type ke React Imports (For Real Use)</h1>
+
+    <div class="block">
+        <h2>✅ 1. React Core Imports</h2>
+        <pre><code>import React from 'react';
+import { useState, useEffect } from 'react';</code></pre>
+        <div class="note">
+            📌 Ye sab har component me use hote hain<br>
+            🔸 <code>useState</code>, <code>useEffect</code> = most used hooks<br>
+            ✅ <span class="highlight">Must-know</span>
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 2. React DOM / Router Imports</h2>
+        <pre><code>import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';</code></pre>
+        <div class="note">
+            📌 <strong>rendering & routing</strong> ke liye<br>
+            ✅ <code>BrowserRouter</code>, <code>Routes</code> = full app structure ke base
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 3. Advanced Hooks Imports</h2>
+        <pre><code>import { useRef, useMemo, useCallback, useContext, useReducer } from 'react';</code></pre>
+        <div class="note">
+            📌 Performance optimize karne aur shared logic handle karne ke liye<br>
+            ✅ <code>useRef</code>, <code>useMemo</code>, <code>useCallback</code> = heavy component optimization me
+            helpful
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 4. Form Libraries</h2>
+        <pre><code>import { useFormik } from 'formik';
+import * as Yup from 'yup';</code></pre>
+        <div class="note">
+            📌 Form validation aur user input ke liye<br>
+            ✅ Signup, Login, Search Forms me use hota hai
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 5. API Utilities</h2>
+        <pre><code>import axios from 'axios';</code></pre>
+        <div class="note">
+            📌 Backend se data fetch aur update karne ke liye<br>
+            ✅ CRUD apps me sabse zaroori cheez
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 6. Component/CSS/Assets</h2>
+        <pre><code>import Header from './components/Header';
+import './App.css';
+import logo from './assets/logo.png';</code></pre>
+        <div class="note">
+            📌 Custom components, styles aur media assets ko laane ke liye<br>
+            ✅ Har project me bar bar use hota hai
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 7. Context Providers</h2>
+        <pre><code>import { AuthProvider } from './context/AuthContext';</code></pre>
+        <div class="note">
+            📌 Global state handle karne ke liye (auth, theme, language etc.)<br>
+            ✅ Redux alternative ya lightweight global state system
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 8. Testing Imports (Optional)</h2>
+        <pre><code>import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';</code></pre>
+        <div class="note">
+            📌 Component testing ke liye<br>
+            ✅ Production-grade apps ya team projects me helpful
+        </div>
+    </div>
+
+    <!-- <h2>📜 React Imports Cheat Sheet Summary</h2>
+  <div class="block">
+    <ul>
+      <li>📦 React Core – <code>useState</code>, <code>useEffect</code></li>
+      <li>🌐 DOM & Router – <code>BrowserRouter</code>, <code>Routes</code></li>
+      <li>⚙️ Advanced Hooks – <code>useRef</code>, <code>useCallback</code></li>
+      <li>📝 Forms – <code>Formik</code>, <code>Yup</code></li>
+      <li>🔌 API – <code>axios</code></li>
+      <li>🎨 Components/CSS – Custom imports</li>
+      <li>🌍 Context – <code>AuthProvider</code>, custom contexts</li>
+      <li>🧪 Testing – <code>Testing Library</code>, <code>Jest</code></li>
+    </ul>
+  </div> -->
+
+
+
+
+
+    <h1>🔥 Total 5 : Types of React Imports (For Advanced Use)</h1>
+
+    <!-- Existing 8 blocks remain unchanged here -->
+
+    <div class="block">
+        <h2>✅ 9. Lazy Loading & Suspense</h2>
+        <pre><code>const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+Loading...
+
+</code></pre>
+        <div class="note">
+            📌 Code-splitting ke liye useful hai<br>
+            ✅ Performance optimized large React/Next apps ke liye must
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 10. Error Boundaries</h2>
+        <pre><code>class ErrorBoundary extends React.Component {
+  componentDidCatch(error, info) {
+    // error handle
+  }
+  render() {
+    return this.props.children;
+  }
+}</code></pre>
+        <div class="note">
+            📌 App crashes ko gracefully handle karne ke liye<br>
+            ✅ Mostly used with dynamic components or lazy imports
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 11. Third-Party UI Libraries</h2>
+        <pre><code>import { Button } from 'antd';
+import { Box } from '@mui/material';</code></pre>
+        <div class="note">
+            📌 Readymade UI components fast design ke liye<br>
+            ✅ MUI, Chakra UI, Ant Design sab production me use hote hain
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 12. Redux / Zustand (Advanced State)</h2>
+        <pre><code>import { useSelector, useDispatch } from 'react-redux';
+import { useStore } from 'zustand';</code></pre>
+        <div class="note">
+            📌 Complex ya global state management ke liye<br>
+            ✅ Redux toolkit ya Zustand = scalable architecture ke liye perfect
+        </div>
+    </div>
+
+    <div class="block">
+        <h2>✅ 13. Custom Hook Sharing</h2>
+        <pre><code>// useFetch.js
+import { useState, useEffect } from 'react';
+
+function useFetch(url) {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch(url).then(res => res.json()).then(setData);
+  }, [url]);
+  return data;
+}
+export default useFetch;</code></pre>
+        <div class="note">
+            📌 Reusable logic banane ke liye (DRY code)<br>
+            ✅ Every medium-large project me helpful
+        </div>
+    </div>
+
+    <h2>📜 React Imports Cheat Sheet Summary</h2>
+    <div class="block">
+        <ul>
+            <li>📦 React Core – <code>useState</code>, <code>useEffect</code></li>
+            <li>🌐 DOM & Router – <code>BrowserRouter</code>, <code>Routes</code></li>
+            <li>⚙️ Advanced Hooks – <code>useRef</code>, <code>useCallback</code></li>
+            <li>📝 Forms – <code>Formik</code>, <code>Yup</code></li>
+            <li>🔌 API – <code>axios</code></li>
+            <li>🎨 Components/CSS – Custom imports</li>
+            <li>🌍 Context – <code>AuthProvider</code>, custom contexts</li>
+            <li>🧪 Testing – <code>Testing Library</code>, <code>Jest</code></li>
+            <li>⏳ Lazy Loading – <code>React.lazy</code>, <code>Suspense</code></li>
+            <li>❌ Error Boundaries – <code>componentDidCatch</code></li>
+            <li>📦 UI Libraries – <code>AntD</code>, <code>MUI</code></li>
+            <li>🧠 Redux / Zustand – Advanced state tools</li>
+            <li>♻️ Custom Hooks – <code>useFetch</code>, reusable logic</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Android UI Components — Master List Categorized by Use</title>
+<style>
+  body {
+    font-family:  "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 18mm;
+    background: #fff;
+    color: rgb(34,34,34);
+    font-size: 10.5pt;
+    line-height: 1.35;
+  }
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px 0;
+    background-color: rgb(240, 248, 255); /* AliceBlue */
+    color: rgb(10, 40, 90);
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(10,40,90,0.15);
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: rgb(10, 60, 110);
+    padding: 12px 16px;
+    background-color: rgb(220, 235, 251); /* a light blue */
+    border-left: 6px solid rgb(10, 60, 110);
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px rgba(10,60,110,0.1);
+    text-align: center;
+  }
+  .list-content > b{
+    font-size: 18px;
+    padding: 12px;
+    text-align: center;
+    display: block;
+  }
+  p.intro {
+    font-size: 16px;
+    color: rgb(40,40,40);
+    background-color: rgb(245, 250, 255);
+    border-left: 5px solid rgb(70,130,180);
+    padding: 12px 18px;
+    border-radius: 3px;
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+
+  p.tips {
+    font-size: 16px;
+    color: rgb(60,60,60);
+    background-color: rgb(235, 245, 255);
+    border-left: 5px solid rgb(80,120,180);
+    padding: 8px 14px;
+    border-radius: 3px;
+    margin-top: 24px;
+    max-width: 600px;
+  }
+
+  .list-content {
+    font-size: 10.5pt;
+    line-height: 1.35;
+    max-width: 100%;
+  }
+  .list-content b {
+    font-weight: 700;
+    color: rgb(20, 40, 90);
+  }
+  .list-content i {
+    font-style: italic;
+    color: rgb(130, 70, 70);
+  }
+
+  /* Alternating background for list items */
+  .list-content br + br {
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  /* Wrap numbered lines in span for alternating background */
+  .numbered-list {
+    counter-reset: item;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .numbered-list span.list-item {
+    display: block;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 2px;
+    margin: 0px 0px 8px 0px;
+  }
+  .list-item
+  {
+    margin: 5px 0px ;
+    font-weight: 500;
+  }
+  .numbered-list span.list-item:nth-child(odd) {
+    background-color: rgb(240, 248, 255);
+  }
+  .numbered-list span.list-item:nth-child(even) {
+    background-color: rgb(230, 240, 255);
+  }
+
+  /* Deprecated or old highlight */
+  .deprecated {
+    font-style: italic;
+    color: rgb(160, 80, 80);
+  }
+  
+
+
+  /* Page break for printing */
+  /*
+  @media print {
+    body {
+      margin: 18mm;
+      color: #000;
+      background: #fff;
+      font-size: 10pt;
+    }
+    h1, h2 {
+      page-break-after: avoid;
+    }
+    h2 {
+      page-break-before: always;
+      border-left-color: #000;
+      background-color: #eee !important;
+      color: #000 !important;
+      box-shadow: none !important;
+    }
+    .list-content span.list-item {
+      page-break-inside: avoid;
+    }
+    p.intro, p.tips {
+      border-left-color: #000 !important;
+      background-color: #f7f7f7 !important;
+      color: #000 !important;
+    }
+  }*/
+</style>
+</head>
+<body>
+
+<h1>Android UI Components — Master List (ViewGroups & Views)</h1>
+
+<p class="intro">
+  <b>Notes:</b> This document lists commonly-used <b>ViewGroup</b> subclasses (containers/layouts) and <b>View</b> widgets from Android Framework, AndroidX (Jetpack), Material Components and Google Play services. <i>Deprecated items are italicized and colored.</i><br />
+  Use this on mobile for quick screenshots — headings and spacing optimized for readability.
+</p>
+
+<h2>1. Basic Layouts</h2>
+<div class="list-content">
+  <b>Common container layouts</b>
+  <div class="numbered-list">
+    <span class="list-item">1. LinearLayout</span>
+    <span class="list-item"><i>2. RelativeLayout (deprecated)</i></span>
+    <span class="list-item">3. FrameLayout</span>
+    <span class="list-item">4. TableLayout</span>
+    <span class="list-item">5. TableRow</span>
+    <span class="list-item">6. GridLayout</span>
+    <span class="list-item"><i>7. AbsoluteLayout (deprecated)</i></span>
+  </div>
+</div>
+
+<h2>2. Scrolling Containers</h2>
+<div class="list-content">
+  <b>Scroll and swipe containers</b>
+  <div class="numbered-list">
+    <span class="list-item">8. ScrollView</span>
+    <span class="list-item">9. HorizontalScrollView</span>
+    <span class="list-item">10. NestedScrollView</span>
+  </div>
+</div>
+
+<h2>3. Adapter-based Containers</h2>
+<div class="list-content">
+  <b>Lists and pagers that adapt data</b>
+  <div class="numbered-list">
+    <span class="list-item">11. ListView</span>
+    <span class="list-item">12. GridView</span>
+    <span class="list-item">13. ExpandableListView</span>
+    <span class="list-item">14. Spinner (AdapterView)</span>
+    <span class="list-item"><i>15. Gallery (deprecated)</i></span>
+    <span class="list-item">16. StackView</span>
+    <span class="list-item">17. AdapterViewFlipper</span>
+    <span class="list-item">41. RecyclerView (androidx.recyclerview.widget.RecyclerView)</span>
+    <span class="list-item">42. ViewPager (androidx.viewpager.widget.ViewPager)</span>
+    <span class="list-item">43. ViewPager2 (androidx.viewpager2.widget.ViewPager2)</span>
+  </div>
+</div>
+
+<h2>4. Material &amp; Jetpack Layouts</h2>
+<div class="list-content">
+  <b>Modern layouts and app bars/component containers</b>
+  <div class="numbered-list">
+    <span class="list-item">38. Toolbar (framework)</span>
+    <span class="list-item">39. ConstraintLayout (androidx.constraintlayout.widget.ConstraintLayout)</span>
+    <span class="list-item">40. MotionLayout (androidx.constraintlayout.motion.widget.MotionLayout)</span>
+    <span class="list-item">44. SwipeRefreshLayout (androidx.swiperefreshlayout.widget.SwipeRefreshLayout)</span>
+    <span class="list-item">45. DrawerLayout (androidx.drawerlayout.widget.DrawerLayout)</span>
+    <span class="list-item">46. SlidingPaneLayout (androidx.slidingpanelayout.widget.SlidingPaneLayout)</span>
+    <span class="list-item">47. CoordinatorLayout (androidx.coordinatorlayout.widget.CoordinatorLayout)</span>
+    <span class="list-item">48. Toolbar (androidx.appcompat.widget.Toolbar)</span>
+    <span class="list-item">49. LinearLayoutCompat (androidx.appcompat.widget.LinearLayoutCompat)</span>
+    <span class="list-item">50. ActionMenuView (androidx.appcompat.widget.ActionMenuView)</span>
+    <span class="list-item">51. ActionBarOverlayLayout (androidx.appcompat.widget.ActionBarOverlayLayout)</span>
+    <span class="list-item">52. ContentFrameLayout (androidx.appcompat.widget.ContentFrameLayout)</span>
+    <span class="list-item">53. FitWindowsFrameLayout (androidx.appcompat.widget.FitWindowsFrameLayout)</span>
+    <span class="list-item">54. CardView (androidx.cardview.widget.CardView)</span>
+    <span class="list-item">55. FragmentContainerView (androidx.fragment.app.FragmentContainerView)</span>
+    <span class="list-item">58. ComposeView (androidx.compose.ui.platform.ComposeView)</span>
+    <span class="list-item">59. ActivityChooserView (androidx.appcompat.widget.ActivityChooserView)</span>
+    <span class="list-item">60. PagerTitleStrip (androidx.viewpager.widget.PagerTitleStrip)</span>
+    <span class="list-item">61. PagerTabStrip (androidx.viewpager.widget.PagerTabStrip)</span>
+    <span class="list-item">62. AppBarLayout (com.google.android.material.appbar.AppBarLayout)</span>
+    <span class="list-item">63. CollapsingToolbarLayout (com.google.android.material.appbar.CollapsingToolbarLayout)</span>
+    <span class="list-item">64. MaterialToolbar (com.google.android.material.appbar.MaterialToolbar)</span>
+    <span class="list-item">65. BottomAppBar (com.google.android.material.bottomappbar.BottomAppBar)</span>
+  </div>
+</div>
+
+<h2>5. Date &amp; Time Pickers</h2>
+<div class="list-content">
+  <b>Date and time user input components</b>
+  <div class="numbered-list">
+    <span class="list-item">25. DatePicker</span>
+    <span class="list-item">26. TimePicker</span>
+    <span class="list-item">27. CalendarView</span>
+  </div>
+</div>
+
+<h2>6. Navigation Components</h2>
+<div class="list-content">
+  <b>Navigation bars and tab components</b>
+  <div class="numbered-list">
+    <span class="list-item"><i>28. TabHost (old)</i></span>
+    <span class="list-item"><i>29. TabWidget (old)</i></span>
+    <span class="list-item">66. TabLayout (com.google.android.material.tabs.TabLayout)</span>
+    <span class="list-item">67. NavigationView (com.google.android.material.navigation.NavigationView)</span>
+    <span class="list-item">68. NavigationBarView (base for nav bars)</span>
+    <span class="list-item">69. BottomNavigationView (com.google.android.material.bottomnavigation.BottomNavigationView)</span>
+    <span class="list-item">70. NavigationRailView (com.google.android.material.navigation.NavigationRailView)</span>
+  </div>
+</div>
+
+<h2>7. Widgets / Views - Text &amp; Input</h2>
+<div class="list-content">
+  <b>Text display, input, and auto-complete</b>
+  <div class="numbered-list">
+    <span class="list-item">1. TextView</span>
+    <span class="list-item">2. EditText</span>
+    <span class="list-item">3. AutoCompleteTextView</span>
+    <span class="list-item">4. MultiAutoCompleteTextView</span>
+    <span class="list-item">5. CheckedTextView</span>
+    <span class="list-item">51. MaterialTextView</span>
+    <span class="list-item">52. MaterialAutoCompleteTextView</span>
+    <span class="list-item">53. TextInputEditText (com.google.android.material.textfield.TextInputEditText)</span>
+    <span class="list-item">69. MaterialTextInputEditText (alias for TextInputEditText)</span>
+    <span class="list-item">61. EmojiTextView (androidx.emoji.widget.EmojiTextView)</span>
+    <span class="list-item">62. EmojiEditText (androidx.emoji.widget.EmojiEditText)</span>
+  </div>
+</div>
+
+<h2>8. Widgets - Buttons and Toggles</h2>
+<div class="list-content">
+  <b>Buttons, toggles, and compound controls</b>
+  <div class="numbered-list">
+    <span class="list-item">6. Button</span>
+    <span class="list-item">7. AppCompatButton</span>
+    <span class="list-item">8. ImageButton</span>
+    <span class="list-item">9. AppCompatImageButton</span>
+    <span class="list-item">13. FloatingActionButton (com.google.android.material.floatingactionbutton.FloatingActionButton)</span>
+    <span class="list-item">14. ExtendedFloatingActionButton (Material)</span>
+    <span class="list-item">15. MaterialButton</span>
+    <span class="list-item">16. CheckBox</span>
+    <span class="list-item">17. AppCompatCheckBox</span>
+    <span class="list-item">18. RadioButton</span>
+    <span class="list-item">19. AppCompatRadioButton</span>
+    <span class="list-item">20. ToggleButton</span>
+    <span class="list-item">21. Switch (framework)</span>
+    <span class="list-item">22. SwitchCompat (androidx.appcompat.widget.SwitchCompat)</span>
+    <span class="list-item">55. MaterialCheckBox</span>
+    <span class="list-item">56. MaterialRadioButton</span>
+    <span class="list-item">57. MaterialSwitch</span>
+    <span class="list-item">63. EmojiButton (androidx.emoji.widget.EmojiButton)</span>
+    <span class="list-item">73. ViewOverlay / Overlay helpers (view-related)</span>
+  </div>
+</div>
+
+<h2>9. Widgets - Media &amp; Graphics</h2>
+<div class="list-content">
+  <b>Image, video, and graphic display views</b>
+  <div class="numbered-list">
+    <span class="list-item">10. ImageView</span>
+    <span class="list-item">11. AppCompatImageView</span>
+    <span class="list-item">12. ShapeableImageView (Material)</span>
+    <span class="list-item">59. ShapeableImageView</span>
+    <span class="list-item">31. VideoView</span>
+    <span class="list-item">32. SurfaceView</span>
+    <span class="list-item">33. TextureView</span>
+    <span class="list-item">34. GLSurfaceView</span>
+    <span class="list-item">60. GLSurfaceView (already listed) — included for emphasis</span>
+    <span class="list-item">71. MediaRouteButton</span>
+    <span class="list-item">74. DragShadowBuilder (helper for drag &amp; drop visuals)</span>
+  </div>
+</div>
+
+<h2>10. Widgets - Progress &amp; Indicators</h2>
+<div class="list-content">
+  <b>Loading, progress, and rating views</b>
+  <div class="numbered-list">
+    <span class="list-item">23. ProgressBar</span>
+    <span class="list-item">24. SeekBar</span>
+    <span class="list-item">25. AppCompatSeekBar</span>
+    <span class="list-item">26. RatingBar</span>
+    <span class="list-item">27. AppCompatRatingBar</span>
+    <span class="list-item">58. MaterialProgressIndicator</span>
+  </div>
+</div>
+
+<h2>11. Specialty Views &amp; Helpers</h2>
+<div class="list-content">
+  <b>Miscellaneous special purpose or helper views</b>
+  <div class="numbered-list">
+    <span class="list-item">18. GestureOverlayView</span>
+    <span class="list-item">35. <i>FragmentBreadCrumbs (deprecated)</i></span>
+    <span class="list-item">36. ZoomControls</span>
+    <span class="list-item">37. <i>SlidingDrawer (deprecated)</i></span>
+    <span class="list-item">38. Toolbar (framework)</span>
+    <span class="list-item">41. <i>DigitalClock (deprecated)</i></span>
+    <span class="list-item">42. <i>AnalogClock (deprecated)</i></span>
+    <span class="list-item">43. CalendarView</span>
+    <span class="list-item">46. NumberPicker</span>
+    <span class="list-item">49. SearchView</span>
+    <span class="list-item">50. CompoundButton (base class)</span>
+    <span class="list-item">54. Chip (com.google.android.material.chip.Chip)</span>
+    <span class="list-item">70. MaterialCardView (view-like usage)</span>
+    <span class="list-item">72. <i>QuickContactBadge (duplicate)</i></span>
+    <span class="list-item">75. MapView (com.google.android.gms.maps.MapView) — optional (Google Play services)</span>
+    <span class="list-item">76. StreetViewPanoramaView (com.google.android.gms.maps.StreetViewPanoramaView) — optional</span>
+    <span class="list-item">77. RecyclerView item views (cells are custom Views)</span>
+    <span class="list-item">78. CustomView (user-defined Views inherit from View)</span>
+    <span class="list-item">79. Wearable-specific Views (if building for Wear OS)</span>
+    <span class="list-item">80. Accessibility-focused Views &amp; helpers (announce-only views)</span>
+  </div>
+</div>
+
+<h2>12. Deprecated / Legacy Components Summary</h2>
+<div class="list-content">
+  <b>Deprecated and legacy components across the framework</b>
+  <div class="numbered-list">
+    <span class="list-item"><i>2. RelativeLayout</i></span>
+    <span class="list-item"><i>7. AbsoluteLayout</i></span>
+    <span class="list-item"><i>15. Gallery</i></span>
+    <span class="list-item"><i>28. TabHost</i></span>
+    <span class="list-item"><i>29. TabWidget</i></span>
+    <span class="list-item"><i>35. FragmentBreadCrumbs</i></span>
+    <span class="list-item"><i>37. SlidingDrawer</i></span>
+    <span class="list-item"><i>30. Gallery (View Widgets)</i></span>
+    <span class="list-item"><i>41. DigitalClock (View Widgets)</i></span>
+    <span class="list-item"><i>42. AnalogClock (View Widgets)</i></span>
+  </div>
+</div>
+
+<p class="tips">
+  <b>Tips:</b> For screenshots on mobile, open this page in full-screen (portrait), zoom to fit width, then capture. If you want a 1-page condensed cheat-sheet for quick screenshot, just ask!
+</p>
+
+</body>
+</html>

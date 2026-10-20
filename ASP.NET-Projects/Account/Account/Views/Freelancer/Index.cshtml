@@ -1,0 +1,316 @@
+﻿@model Account.Models.ViewModels.FreelancerDashboardViewModel
+
+@{
+    ViewData["Title"] = "Freelancer Dashboard";
+    Layout = "~/Views/Shared/_UserSidebarLayout.cshtml";
+}
+<h5 class="text-center text-success">@TempData["Posted"]</h5>
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h3 class="fw-bold mb-0">
+        Freelancer Dashboard
+    </h3>
+
+    <div class="d-flex gap-2">
+
+        <a asp-controller="Freelancer"
+           asp-action="PortfolioPost"
+           class="btn btn-outline-primary rounded-pill px-4 d-none d-sm-block">
+
+            Add Portfolio
+        </a>
+
+        <a asp-controller="Freelancer"
+           asp-action="FindJob"
+           class="btn btn-primary rounded-pill px-4 d-none d-sm-block">
+
+            Browse Jobs
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Stats Row -->
+<div class="row g-4 mb-4">
+
+    <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm rounded-4 dashboard-card warning p-3 h-100 relative">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <h6 class="text-muted fw-bold text-uppercase mb-2 small tracking-wide">
+                            Active Bids
+                        </h6>
+
+                        <h2 class="fw-bold mb-0">
+                            @Model.ActiveBids
+                        </h2>
+                    </div>
+
+                    <div class="bg-warning-subtle text-warning rounded-circle d-flex align-items-center justify-content-center"
+                         style="width: 50px; height: 50px;">
+
+                        <i class="fas fa-gavel fa-lg"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm rounded-4 dashboard-card p-3 h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <h6 class="text-muted fw-bold text-uppercase mb-2 small tracking-wide">
+                            Ongoing Jobs
+                        </h6>
+
+                        <h2 class="fw-bold mb-0">
+                            @Model.OngoingJobs
+                        </h2>
+                    </div>
+
+                    <div class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center"
+                         style="width: 50px; height: 50px;">
+
+                        <i class="fas fa-spinner fa-lg"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card border-0 shadow-sm rounded-4 dashboard-card success p-3 h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <h6 class="text-muted fw-bold text-uppercase mb-2 small tracking-wide">
+                            Completed
+                        </h6>
+
+                        <h2 class="fw-bold mb-0">
+                            @Model.CompletedJobs
+                        </h2>
+                    </div>
+
+                    <div class="bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center"
+                         style="width: 50px; height: 50px;">
+
+                        <i class="fas fa-check-circle fa-lg"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row g-4">
+
+    <!-- Recent Bids/Jobs -->
+    <div class="col-xl-8">
+
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+            <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+
+                <h5 class="fw-bold mb-0">
+                    My Recent Bids
+                </h5>
+
+                <a href="#"
+                   class="btn btn-sm btn-outline-primary rounded-pill px-3">
+
+                    View All
+                </a>
+            </div>
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead class="table-light text-muted small">
+
+                            <tr>
+                                <th class="ps-4">Job Title</th>
+                                <th>Client</th>
+                                <th>Date Applied</th>
+                                <th>Status</th>
+                                <th class="text-end pe-4">Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                        <tbody>
+
+                                @if (Model.RecentBids != null && Model.RecentBids.Any())
+                                {
+                                    foreach (var bid in Model.RecentBids)
+                                    {
+                                    <tr>
+
+                                        <td class="ps-4 py-3">
+
+                                            <h6 class="fw-bold mb-1">
+
+                                                <a asp-controller="Freelancer"
+                                                   asp-action="JobDetails"
+                                                   asp-route-id="@bid.JobPostId"
+                                                   class="text-dark text-decoration-none">
+
+                                                        @bid.JobPost?.JobTitle
+                                                </a>
+
+                                            </h6>
+
+                                            <small class="text-muted">
+                                                    @bid.JobPost?.JobCategory
+                                            </small>
+
+                                        </td>
+
+                                        <td>
+                                                @bid.JobPost?.Client?.FullName
+                                        </td>
+
+                                        <td>
+                                                @bid.CreatedAt.ToString("dd MMM yyyy")
+                                        </td>
+
+                                        <td>
+
+                                                @if (bid.Status == "Pending")
+                                                {
+                                                <span class="badge bg-warning text-dark">
+                                                    Pending
+                                                </span>
+                                                }
+                                                else if (bid.Status == "Accepted")
+                                                {
+                                                <span class="badge bg-success">
+                                                    Accepted
+                                                </span>
+                                                }
+                                                else
+                                                {
+                                                <span class="badge bg-danger">
+                                                    Rejected
+                                                </span>
+                                                }
+
+                                        </td>
+
+                                        <td class="text-end pe-4">
+
+                                            <a asp-controller="Freelancer"
+                                               asp-action="JobDetails"
+                                               asp-route-id="@bid.JobPostId"
+                                               class="btn btn-sm btn-light text-primary border">
+
+                                                <i class="fas fa-eye"></i>
+                                                View
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+                                    }
+                                }
+                                else
+                                {
+                                <tr>
+
+                                    <td colspan="5" class="text-center py-4 text-muted">
+                                        No bids submitted yet.
+                                    </td>
+
+                                </tr>
+                                }
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Preview -->
+    <div class="col-xl-4">
+
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+            <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+
+                <h5 class="fw-bold mb-0">
+                    My Portfolio
+                </h5>
+
+                <a asp-controller="Freelancer"
+                   asp-action="PortfolioPost"
+                   class="btn btn-sm btn-primary rounded-pill">
+
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+
+            <div class="card-body p-3">
+
+                <div class="row g-2">
+
+                    @if (Model.PortfolioPosts != null && Model.PortfolioPosts.Any())
+                    {
+                        foreach (var post in Model.PortfolioPosts)
+                        {
+                            <div class="col-6 card border-0 shadow-sm rounded-4">
+                                <h6 class="fw-bold mb-2">
+                                    @post.Title
+                                </h6>
+                                <p class="text-muted small mb-2 line-clamp-2">
+                                    @post.Description
+                                </p>
+
+                                <img src="@post.ImagePath"
+                                     class="img-fluid portfolio-img w-100"
+                                     alt="Portfolio">
+
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="col-12 text-center text-muted py-4">
+
+                            No portfolio added yet.
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

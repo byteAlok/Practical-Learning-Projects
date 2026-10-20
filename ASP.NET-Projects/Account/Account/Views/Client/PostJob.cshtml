@@ -1,0 +1,345 @@
+﻿@model Account.Models.JobPostClass
+
+@{
+    ViewData["Title"] = "Post a Job";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .category-select:checked + label {
+        background-color: var(--primary-subtle);
+        border-color: var(--primary-color) !important;
+        color: var(--primary-color);
+    }
+
+    .category-select + label {
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+        .category-select + label:hover {
+            border-color: var(--primary-color) !important;
+        }
+</style>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="mb-4">
+
+                <a asp-controller="Client"
+                   asp-action="Dashboard"
+                   class="text-decoration-none text-muted mb-2 d-inline-block">
+
+                    <i class="fas fa-arrow-left me-1"></i>
+                    Back to Dashboard
+                </a>
+
+                <h2 class="fw-bold">Post a New Job</h2>
+
+                <p class="text-muted">
+                    Fill out the details below to find the perfect skilled talent for your needs.
+                </p>
+
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <form asp-controller="Client"
+                          asp-action="PostJob"
+                          method="post">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <!-- Job Title -->
+                        <div class="mb-4">
+
+                            <label asp-for="JobTitle" class="form-label fw-bold">
+                                Job Title <span class="text-danger">*</span>
+                            </label>
+
+                            <input asp-for="JobTitle"
+                                   class="form-control form-control-lg bg-light"
+                                   placeholder="e.g. Need a custom embroidered dress"
+                                   required>
+
+                            <span asp-validation-for="JobTitle" class="text-danger"></span>
+
+                            <div class="form-text">
+                                Keep it clear and descriptive.
+                            </div>
+
+                        </div>
+
+                        <!-- Category -->
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+                                Select Category <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="row g-3">
+
+                                <div class="col-6 col-md-4">
+
+                                    <input asp-for="JobCategory"
+                                           type="radio"
+                                           class="btn-check category-select"
+                                           id="catStitching"
+                                           value="Stitching"
+                                           autocomplete="off"
+                                           checked>
+
+                                    <label class="btn btn-outline-secondary w-100 text-start border bg-white p-3 rounded-3"
+                                           for="catStitching">
+
+                                        <i class="fas fa-cut fa-lg mb-2 text-primary d-block"></i>
+
+                                        <span class="fw-medium">
+                                            Stitching
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-6 col-md-4">
+
+                                    <input asp-for="JobCategory"
+                                           type="radio"
+                                           class="btn-check category-select"
+                                           id="catCooking"
+                                           value="Cooking"
+                                           autocomplete="off">
+
+                                    <label class="btn btn-outline-secondary w-100 text-start border bg-white p-3 rounded-3"
+                                           for="catCooking">
+
+                                        <i class="fas fa-utensils fa-lg mb-2 text-success d-block"></i>
+
+                                        <span class="fw-medium">
+                                            Cooking
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-6 col-md-4">
+
+                                    <input asp-for="JobCategory"
+                                           type="radio"
+                                           class="btn-check category-select"
+                                           id="catCrafting"
+                                           value="Crafting"
+                                           autocomplete="off">
+
+                                    <label class="btn btn-outline-secondary w-100 text-start border bg-white p-3 rounded-3"
+                                           for="catCrafting">
+
+                                        <i class="fas fa-paint-brush fa-lg mb-2 text-warning d-block"></i>
+
+                                        <span class="fw-medium">
+                                            Crafting
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-6 col-md-4">
+
+                                    <input asp-for="JobCategory"
+                                           type="radio"
+                                           class="btn-check category-select"
+                                           id="catTeaching"
+                                           value="Teaching"
+                                           autocomplete="off">
+
+                                    <label class="btn btn-outline-secondary w-100 text-start border bg-white p-3 rounded-3"
+                                           for="catTeaching">
+
+                                        <i class="fas fa-chalkboard-teacher fa-lg mb-2 text-info d-block"></i>
+
+                                        <span class="fw-medium">
+                                            Teaching
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-6 col-md-4">
+
+                                    <input asp-for="JobCategory"
+                                           type="radio"
+                                           class="btn-check category-select"
+                                           id="catCrochet"
+                                           value="Crochet"
+                                           autocomplete="off">
+
+                                    <label class="btn btn-outline-secondary w-100 text-start border bg-white p-3 rounded-3"
+                                           for="catCrochet">
+
+                                        <i class="fas fa-mitten fa-lg mb-2 text-danger d-block"></i>
+
+                                        <span class="fw-medium">
+                                            Crochet
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-6 col-md-4">
+
+                                    <input asp-for="JobCategory"
+                                           type="radio"
+                                           class="btn-check category-select"
+                                           id="catOther"
+                                           value="Other"
+                                           autocomplete="off">
+
+                                    <label class="btn btn-outline-secondary w-100 text-start border bg-white p-3 rounded-3"
+                                           for="catOther">
+
+                                        <i class="fas fa-ellipsis-h fa-lg mb-2 text-secondary d-block"></i>
+
+                                        <span class="fw-medium">
+                                            Other
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                            <span asp-validation-for="JobCategory" class="text-danger"></span>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-4">
+
+                            <label asp-for="JobDescription" class="form-label fw-bold">
+                                Job Description <span class="text-danger">*</span>
+                            </label>
+
+                            <textarea asp-for="JobDescription"
+                                      class="form-control bg-light"
+                                      rows="6"
+                                      placeholder="Describe the work to be done, requirements, materials, etc."
+                                      required></textarea>
+
+                            <span asp-validation-for="JobDescription" class="text-danger"></span>
+
+                        </div>
+
+                        <div class="row mb-4">
+
+                            <!-- Budget -->
+                            <div class="col-md-6 mb-3 mb-md-0">
+
+                                <label asp-for="Budget" class="form-label fw-bold">
+                                    Estimated Budget (Optional)
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text bg-light border-end-0">
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </span>
+
+                                    <input asp-for="Budget"
+                                           type="number"
+                                           class="form-control bg-light border-start-0"
+                                           placeholder="e.g. 50"
+                                           min="0">
+
+                                </div>
+
+                                <span asp-validation-for="Budget" class="text-danger"></span>
+                            </div>
+
+                            <!-- Delivery Time -->
+                            <div class="col-md-6">
+
+                                <label asp-for="DeliveryTime" class="form-label fw-bold">
+                                    Required Delivery By
+                                </label>
+
+                                <input asp-for="DeliveryTime"
+                                       type="date"
+                                       class="form-control bg-light">
+
+                                <span asp-validation-for="DeliveryTime" class="text-danger"></span>
+
+                            </div>
+                        </div>
+
+                        <!-- Location Options -->
+                        <div class="mb-5">
+
+                            <label class="form-label fw-bold">
+                                Location Requirement
+                            </label>
+
+                            <div class="form-check mb-2">
+
+                                <input asp-for="LocationType"
+                                       class="form-check-input"
+                                       type="radio"
+                                       id="locRemote"
+                                       value="remote"
+                                       checked>
+
+                                <label class="form-check-label" for="locRemote">
+                                    Remote / Online delivery
+                                </label>
+
+                            </div>
+
+                            <div class="form-check">
+
+                                <input asp-for="LocationType"
+                                       class="form-check-input"
+                                       type="radio"
+                                       id="locLocal"
+                                       value="local">
+
+                                <label class="form-check-label" for="locLocal">
+                                    Local pickup/drop-off required (specify in description)
+                                </label>
+
+                            </div>
+
+                            <span asp-validation-for="LocationType" class="text-danger"></span>
+                        </div>
+
+                        <!-- Submit -->
+                        <hr class="mb-4">
+
+                        <div class="d-flex justify-content-end gap-3">
+
+                            <a asp-controller="Client"
+                               asp-action="Dashboard"
+                               class="btn btn-light px-4 py-2 fw-medium rounded-pill">
+
+                                Cancel
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-primary px-5 py-2 fw-bold rounded-pill shadow-sm">
+
+                                Post Job Now
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

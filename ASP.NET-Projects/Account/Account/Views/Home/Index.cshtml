@@ -1,0 +1,212 @@
+﻿@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    var Uid = HttpContextAccessor.HttpContext.Session.GetInt32("UserId");
+}
+
+@* @section Styles { *@
+@*     <link rel="stylesheet" href="~/css/home/home.css" /> *@
+@* } *@
+
+
+
+
+<!-- Hero Section -->
+<section class="hero-section text-center text-lg-start bg-light py-5 position-relative overflow-hidden">
+    <div class="container position-relative z-1">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2 rounded-pill fw-medium tracking-wide">Digital Marketplace</span>
+                <h1 class="display-4 fw-bold text-dark mb-4 lh-sm">
+                    Turn Your <span class="text-primary">Skills</span> Into <br>Economic Independence
+                </h1>
+                <p class="lead text-muted mb-5 pe-lg-4 fs-5">
+                    A unique platform bridging skilled women and clients. Showcase your talents in stitching, cooking, crafting, teaching, and crochet to earn globally without restrictions.
+                </p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                    <a asp-controller="Jobs" asp-action="Index" class="btn btn-primary btn-lg px-4 rounded-pill shadow-sm d-flex align-items-center justify-content-center">
+                        Find a Service <i class="fas fa-arrow-right ms-2 mt-1"></i>
+                    </a>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-outline-dark btn-lg px-4 rounded-pill d-flex align-items-center justify-content-center">
+                        Register as a Freelancer
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center position-relative">
+                <div class="blob-shape bg-primary position-absolute w-100 h-100 opacity-10 rounded-circle" style="filter: blur(50px); top: 0; left: 0; transform: scale(0.8);"></div>
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Empowered Women Working" class="img-fluid rounded-4 shadow-lg hero-img position-relative border border-4 border-white">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-5 my-4">
+    <div class="container">
+        <div class="text-center mb-5 pb-2">
+            <span class="text-primary fw-bold text-uppercase tracking-wide small">Why Choose Us</span>
+            <h2 class="fw-bold section-title display-6 mt-2">Platform Features</h2>
+            <p class="text-muted fs-5 mt-3 max-w-2xl mx-auto">Designed specifically to be accessible, secure, and easy to use for everyone.</p>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <!-- Feature 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm feature-card p-4 rounded-4 bg-white">
+                    <div class="card-body">
+                        <div class="icon-wrapper bg-primary-subtle text-primary mb-4 rounded-circle d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                            <i class="fas fa-mobile-alt fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">User-Friendly Interface</h5>
+                        <p class="card-text text-muted lh-lg">A clean, simple design ensuring the platform is perfectly suitable for women who may not be highly educated.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm feature-card p-4 rounded-4 bg-white">
+                    <div class="card-body">
+                        <div class="icon-wrapper bg-success-subtle text-success mb-4 rounded-circle d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                            <i class="fas fa-id-badge fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Skill-Based Profiles</h5>
+                        <p class="card-text text-muted lh-lg">Easily create profiles showcasing unique skills like stitching, cooking, crafting, teaching, and crochet to potential clients.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm feature-card p-4 rounded-4 bg-white">
+                    <div class="card-body">
+                        <div class="icon-wrapper bg-info-subtle text-info mb-4 rounded-circle d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                            <i class="fas fa-location-arrow fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Easy Navigation</h5>
+                        <p class="card-text text-muted lh-lg">Clear menu options and intuitive navigation flows so finding services or managing your profile is completely effortless.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm feature-card p-4 rounded-4 bg-white">
+                    <div class="card-body">
+                        <div class="icon-wrapper bg-warning-subtle text-warning mb-4 rounded-circle d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                            <i class="fas fa-address-book fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Profile Viewing & Contact</h5>
+                        <p class="card-text text-muted lh-lg">Clients can seamlessly browse detailed skill profiles, view past work, and easily access contact information to connect directly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm feature-card p-4 rounded-4 bg-white">
+                    <div class="card-body">
+                        <div class="icon-wrapper bg-danger-subtle text-danger mb-4 rounded-circle d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                            <i class="fas fa-user-shield fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold fs-4 mb-3">Admin Management</h5>
+                        <p class="card-text text-muted lh-lg">Robust administration that monitors users, approves profiles, and ensures the digital marketplace remains accurate, reliable, and safe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Categories Section -->
+<section id="skills" class="py-5 bg-light my-5">
+    <div class="container py-4">
+        <div class="text-center mb-5 pb-3">
+            <span class="text-primary fw-bold text-uppercase tracking-wide small">Discover Talents</span>
+            <h2 class="fw-bold section-title display-6 mt-2">Explore Skills & Services</h2>
+            <p class="text-muted fs-5 mt-3 max-w-2xl mx-auto">Connect directly with skilled women across various categories.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Skill 1 -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="skill-item bg-white p-4 rounded-4 shadow-sm text-center d-block h-100 text-decoration-none text-dark">
+                    <div class="skill-icon text-primary mb-3">
+                        <i class="fas fa-cut fa-3x"></i>
+                    </div>
+                    <h6 class="fw-bold fs-5 mb-0">Stitching & Tailoring</h6>
+                </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="skill-item bg-white p-4 rounded-4 shadow-sm text-center d-block h-100 text-decoration-none text-dark">
+                    <div class="skill-icon text-success mb-3">
+                        <i class="fas fa-utensils fa-3x"></i>
+                    </div>
+                    <h6 class="fw-bold fs-5 mb-0">Cooking & Baking</h6>
+                </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="skill-item bg-white p-4 rounded-4 shadow-sm text-center d-block h-100 text-decoration-none text-dark">
+                    <div class="skill-icon text-warning mb-3">
+                        <i class="fas fa-paint-brush fa-3x"></i>
+                    </div>
+                    <h6 class="fw-bold fs-5 mb-0">Arts & Crafting</h6>
+                </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="skill-item bg-white p-4 rounded-4 shadow-sm text-center d-block h-100 text-decoration-none text-dark">
+                    <div class="skill-icon text-info mb-3">
+                        <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                    </div>
+                    <h6 class="fw-bold fs-5 mb-0">Teaching & Tutoring</h6>
+                </div>
+            </div>
+
+            <!-- Skill 5 -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="skill-item bg-white p-4 rounded-4 shadow-sm text-center d-block h-100 text-decoration-none text-dark">
+                    <div class="skill-icon text-danger mb-3">
+                        <i class="fas fa-mitten fa-3x"></i>
+                    </div>
+                    <h6 class="fw-bold fs-5 mb-0">Crochet & Knitting</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="" class="btn btn-outline-primary btn-lg px-5 rounded-pill">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="mt-4 position-relative overflow-hidden CTA-section">
+    <div class="container py-5 text-center position-relative z-1">
+        <h2 class="display-5 fw-bold mb-4">Empower Yourself Today</h2>
+        <p class="lead text-dark-50 mb-5 max-w-2xl mx-auto fs-4">Join our growing community, showcase your talents to the world, and start earning on your own terms.</p>
+        <div class="d-inline-flex gap-3">
+            <a asp-action="Register" asp-controller="Account" class="btn btn-light btn-lg px-5 py-3 text-primary fw-bold rounded-pill shadow-lg">Become a Freelancer</a>
+            <a asp-action="Register" asp-controller="Account" class="btn btn-light btn-lg px-5 py-3 text-primary fw-bold rounded-pill shadow-lg">Hire a Talent</a>
+            @* <a href="#" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold rounded-pill">Hire a Talent</a> *@
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</html>
+

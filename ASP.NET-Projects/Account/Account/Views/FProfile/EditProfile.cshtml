@@ -1,0 +1,80 @@
+﻿@model Account.Models.UserClass
+@{
+    ViewData["Title"] = "Edit Profile";
+    Layout = "_UserSidebarLayout";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-4 fw-bold"><i class="fas fa-user-edit text-primary me-2"></i>Edit Profile</h2>
+
+                    <form asp-action="EditProfile" asp-controller="FProfile" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="Role" />
+                        <input type="hidden" asp-for="CreatedAt" />
+
+                        <div class="mb-4">
+                            <label class="form-label text-muted fw-semibold">Profile Image</label>
+                            <input type="file" name="profileImage" class="form-control" accept="image/*" />
+                            <small class="text-muted">Leave empty to keep your current photo.</small>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="FullName" class="form-label text-muted fw-semibold">First Name</label>
+                                <input asp-for="FullName" class="form-control" required />
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label text-muted fw-semibold">Email Address</label>
+                            <input asp-for="Email" class="form-control" type="email" required />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Location" class="form-label text-muted fw-semibold">Location</label>
+                            <input asp-for="Location" class="form-control" placeholder="City, Country" />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Bio" class="form-label text-muted fw-semibold">Bio / About Me</label>
+                            <textarea asp-for="Bio" class="form-control" rows="4" placeholder="Tell us about yourself..."></textarea>
+                            <span asp-validation-for="Bio" class="text-danger"></span>
+                        </div>
+
+                        @if (Model.Role == "Freelancer")
+                        {
+                            <hr class="my-4 text-secondary opacity-25">
+                            <h5 class="mb-3 fw-bold fs-6">Freelancer Specifics</h5>
+
+                            <div class="mb-4">
+                                <label asp-for="Skills" class="form-label text-muted fw-semibold">Skills (Comma separated)</label>
+                                <input asp-for="Skills" class="form-control" placeholder="e.g. Graphic Design, Virtual Assistant, Copywriting" />
+                                <span asp-validation-for="Skills" class="text-danger"></span>
+                            </div>
+                        }
+
+                        <div class="d-flex justify-content-end gap-2 mt-4 pt-2 border-top">
+                            <a asp-action="Index" asp-controller="Freelancer" class="btn btn-light rounded-pill px-4 border">Cancel</a>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4 shadow-sm"><i class="fas fa-save me-1"></i> Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* @section Scripts { *@
+@*     @{ *@
+@*         await Html.RenderPartialAsync("_ValidationScriptsPartial"); *@
+@*     } *@
+@* } *@

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<NewApiApp.Models.Web>
+    @{
+        ViewBag.Title = "Index";
+    }
+    <div class="row m-0 p-0">
+
+        <h3 class="card-title mt-4">News location : <span class="text-primary">@ViewBag.CityName</span></h3>
+
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4 mt-3 p-0">
+                <div class="card h-100" style="width: 28rem;">
+                    <img src="@item.ImgUrl" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h4 class="card-title">Source : @item.Name</h4>
+                        <h5 class="card-title">Author : @item.Author</h5>
+                        <h5 class="card-title">Title : @item.Title</h5>
+                        <p class="card-text">Description : @item.Description</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Published at : @item.PublishedTime</li>
+                        <li class="list-group-item">Content : @item.Content</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="@item.Url" target="_blank" class="card-link">Visit This Link</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

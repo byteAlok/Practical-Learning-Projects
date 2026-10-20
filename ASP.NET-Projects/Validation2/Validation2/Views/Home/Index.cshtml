@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<p>
+@Html.ValidationSummary()
+    </p>
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.TextBox("Name")
+    </p>
+    <p>
+        @Html.TextBox("Email")
+    </p>
+    <p>
+        @Html.TextBox("Address")
+    </p>
+    <p>
+        @Html.TextBox("Password")
+    </p>
+
+    <input type="submit" value="Submit" />
+}

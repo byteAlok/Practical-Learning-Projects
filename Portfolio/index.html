@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alok Maurya | Portfolio</title>
+    <meta name="description"
+        content="Alok Maurya is a Full Stack Developer specializing in responsive Web & Mobile Applications using React and Tailwind CSS. Check out projects, portfolio, and contact info.">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <link rel="preload" as="imageProfile" href="1704388595131.jpg">
+    <link rel="preload" as="imageBg" href="Logo/Gem_1y2kf71y2kf71y2k.png">
+
+
+
+    <style>
+        [id] {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<!-- bg-[#09182b] -->
+
+<body class="bg-blue-100 text-white font-sans max-w-[1560px] mx-auto">
+
+    <header class="bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')]
+  bg-center bg-cover bg-no-repeat sticky top-0 m-0 p-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-5 py-[18px] 2xl:py-5">
+            <!-- Brand -->
+            <a href="./" class="flex items-center">
+                <h1 class="text-2xl md:text-3xl xl:text-4xl font-bold -mt-[4px]">
+                    Alok <span class="text-cyan-400">Maurya</span>
+                </h1>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav aria-label="Main Navigation" class="hidden sm:block">
+                <ul class="flex space-x-6 lg:space-x-10 font-medium">
+                    <li><a href="#home" class="text-sm md:text-base xl:text-lg hover:text-cyan-300">Home</a>
+                    </li>
+                    <li><a href="#about" class="text-sm md:text-base xl:text-lg hover:text-cyan-300">About</a></li>
+                    <li><a href="#projects" class="text-sm md:text-base xl:text-lg hover:text-cyan-300">Projects</a>
+                    </li>
+                    <li><a href="#skills" class="text-sm md:text-base xl:text-lg hover:text-cyan-300">Skills</a></li>
+                    <li><a href="#contact" class="text-sm md:text-base xl:text-lg hover:text-cyan-300">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button (Desktop) -->
+            <a href="Logo/Alok Maurya - Resume.pdf" download="Alok_Maurya_Resume"
+                class="hidden sm:block font-medium bg-cyan-600 rounded-full px-6 py-2 hover:bg-cyan-800 sm:text-sm md:text-base xl:text-md">
+                Download CV
+            </a>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger" class="sm:hidden text-2xl focus:outline-none" aria-label="Toggle Mobile Menu"
+                aria-expanded="false" aria-controls="mobileMenu">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobileMenu" class="hidden flex flex-col space-y-4 p-4 sm:hidden items-center border-t"
+            aria-label="Mobile Navigation">
+            <a href="#home" class="text-base hover:text-cyan-400 px-4 py-1">Home</a>
+            <a href="#about" class="text-base hover:text-cyan-400 px-4 py-1">About</a>
+            <a href="#projects" class="text-base hover:text-cyan-400 px-4 py-1">Projects</a>
+            <a href="#skills" class="text-base hover:text-cyan-400 px-4 py-1">Skills</a>
+            <a href="#contact" class="text-base hover:text-cyan-400 px-4 py-1">Contact</a>
+            <a href="cv.pdf" download class="font-medium bg-blue-600 rounded px-4 py-2 hover:bg-blue-700 text-base">
+                Download CV
+            </a>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('hidden');
+            hamburger.setAttribute("aria-expanded", !isOpen);
+        });
+    </script>
+
+    <!-- ---------------Main -------------------- -->
+
+    <main>
+
+        <!------------------------------ Introducing ------------------------------->
+
+
+        <section class="home pb-8 bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')]
+  bg-center bg-cover bg-no-repeat m-2 sm:m-4 lg:m-5 rounded-lg" id="home">
+            <div class="flex flex-wrap m-0 p-0">
+
+                <div class="w-full sm:w-1/2 flex items-center justify-center p-4 sm:p-8 ">
+                    <div class="w-64 h-84 md:w-72 md:h-96 lg:w-76 border-2 sm:border-3 border-cyan-400 rounded-xl my-6 sm:my-8 shadow-[0_0_16px_0px_#007bff] overflow-hidden"
+                        id="introProfile">
+                        <img src="Logo/IMG_20251116_210355.jpg"
+                            class="w-full h-full object-cover hover:object-full transition" alt="Profile Image " />
+                    </div>
+                </div>
+
+                <div class="w-full sm:w-1/2 p-4 sm:p-4 md:p-8 " id="introText">
+                    <div class="px-4 sm:p-0">
+                        <p class=" text-xl font-medium sm:mt-8 ">Hi, I'm</p>
+                        <h1 class=" text-4xl lg:text-5xl font-bold mt-2">Alok Maurya</h1>
+                        <h2 class=" text-xl font-medium mt-4">And I'm a <span
+                                class="text-2xl lg:text-3xl text-cyan-400 font-bold ms-1" id="loop"></span><span
+                                class="text-3xl lg:text-4xl text-gray-400 font-normal">|</span></h2>
+
+                        <p class=" text-sm sm:text-base font-medium mt-4 text-justify">I build responsive
+                            Web-Applications
+                            with modern UI/UX using React and Tailwind CSS.
+                            I focus on performance, accessibility, and pixel-perfect design to create seamless digital
+                            experiences.
+
+                        </p>
+
+                        <div class="flex space-x-2 sm:space-x-3 mt-8">
+
+                            <!-- Twitter/X -->
+                            <a href="https://x.com/AlokSDE" aria-label="Twitter/X"
+                                class="text-cyan-400 hover:text-gray-200 transition-colors">
+                                <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                    </path>
+                                </svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/alokmaurya.in" aria-label="Instagram"
+                                class="text-cyan-400 hover:text-pink-500 transition-colors">
+                                <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/alokmauryaofficial" aria-label="LinkedIn"
+                                class="text-cyan-400 hover:text-cyan-400 transition-colors">
+                                <svg aria-hidden="true" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <!-- GitHub -->
+                            <a href="https://github.com/byteAlok" aria-label="GitHub"
+                                class="text-cyan-400 hover:text-gray-200 transition-colors">
+                                <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="https://youtube.com/@alokmauryavlogs" aria-label="YouTube"
+                                class="text-cyan-400 hover:text-red-500 transition-colors">
+
+                                <!-- YouTube -->
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8"
+                                    fill="currentColor" viewBox="0 0 640 640">
+                                    <path
+                                        d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="mt-6 space-x-2 sm:space-x-4 space-y-6 sm:space-y-0">
+                        <button>
+                            <a href="#projects"
+                                class="bg-cyan-700 hover:bg-transparent hover:border border-cyan-500  font-semibold py-2 px-4 rounded-full transition">View
+                                Projects</a>
+                        </button>
+                        <button>
+                            <a href="#contact"
+                                class="border border-cyan-500 py-2 px-4 rounded-full font-semibold hover:bg-cyan-700 hover:border-0">Contact
+                                Me</a>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ------------------------------------------------------------------------- -->
+
+            <section class="stats" id="stats">
+                <div class="w-full flex flex-wrap mt-4 p-0 sm:mt-6 md:m-0">
+                    <div
+                        class="w-1/2 md:w-1/4 flex flex-wrap justify-center items-center space-x-3 md:space-x-4 border-r-3 sm:border-r-4 h-20 px-2">
+
+                        <span class="text-3xl sm:text-4xl lg:text-5xl font-semibold">2+</span>
+                        <span class="text-base sm:text-lg lg:text-xl font-medium">Completed<br />Projects</span>
+
+                    </div>
+                    <div
+                        class="w-1/2 md:w-1/4 flex flex-wrap mt-3 sm:mt-0 justify-center items-center space-x-3 md:space-x-4 md:border-r-4 h-20 px-2">
+
+                        <span class="text-3xl sm:text-4xl lg:text-5xl font-semibold">4+</span>
+                        <span class="text-base sm:text-lg lg:text-xl font-medium">Full Stack<br />Projects</span>
+
+                    </div>
+                    <div
+                        class="w-1/2 md:w-1/4 flex flex-wrap justify-center items-center space-x-3 md:space-x-4 border-r-3 sm:border-r-4 h-20 mt-2 md:mt-0 px-2">
+
+                        <span class="text-3xl sm:text-4xl lg:text-5xl font-semibold">3+</span>
+                        <span class="text-base sm:text-lg lg:text-xl font-medium">Backend<br />Technologies</span>
+
+                    </div>
+                    <div
+                        class="w-1/2 md:w-1/4 flex flex-wrap mt-3 sm:mt-2 justify-center items-center space-x-3 md:space-x-4 h-20 mt-2 md:mt-0 px-2">
+
+                        <span class="text-3xl sm:text-4xl lg:text-5xl font-semibold">5+</span>
+                        <span class="text-base sm:text-lg lg:text-xl font-medium">Programming<br />Languages</span>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- -------------------------About ------------------------------------------------------------------ -->
+
+        <section class="about pb-4 bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')]
+  bg-center bg-cover bg-no-repeat mx-2 sm:mx-4 lg:mx-5 rounded-lg" id="about">
+            <div class="flex flex-wrap m-0 p-0">
+
+                <div class="w-full sm:w-1/2 px-3 sm:p-4 md:p-8" id="aboutText">
+                    <div class="mx-auto mt-2 p-4 sm:p-0 sm:mt-6 sm:ms-4 md:ms-6 lg:ms-36 xl:ms-50">
+                        <h1 class=" text-4xl lg:text-5xl font-bold mt-2">About Me</h1>
+                        <h2 class="text-lg font-semibold mt-4">Here's a little about me</h2>
+
+                        <p class="text-base md:text-lg font-medium mt-3 text-cyan-400">Name : &nbsp; <span
+                                class="text-gray-100 font-normal"> Alok Maurya</span></p>
+                        <p class="text-base md:text-lg font-medium mt-3 text-cyan-400">Email : &nbsp; <span
+                                class="text-gray-100 font-normal"> alokmauryaofficial9936@gmail.com</span></p>
+                        <p class="text-base md:text-lg font-medium mt-3 text-cyan-400">Phone : &nbsp; <span
+                                class="text-gray-100 font-normal"> +91 xxxxxxxxxx</span></p>
+                        <p class="text-base md:text-lg font-medium mt-3 text-cyan-400">City : &nbsp; <span
+                                class="text-gray-100 font-normal"> Hyderabad</span></p>
+                        <p class="text-base md:text-lg font-medium mt-3 text-cyan-400">State : &nbsp; <span
+                                class="text-gray-100"> Telangana</span></p>
+                        <p class="text-base md:text-lg font-medium mt-3 text-cyan-400">Nationality : &nbsp; <span
+                                class="text-gray-100 font-normal"> Indian</span></p>
+
+                    </div>
+                </div>
+
+                <div class="w-full sm:w-1/2 flex items-center justify-center p-4 sm:p-8" id="aboutProfile">
+                    <div class="w-64 h-90 md:w-72 md:h-96 lg:w-76 border-2 sm:border-3 border-cyan-400 rounded-xl my-6 sm:my-8 shadow-[0_0_16px_0px_#007bff] overflow-hidden"
+                        id="introProfile">
+                        <img src="Logo/portfolio_img.jpeg"
+                            class="w-full h-full object-cover hover:object-full transition" alt="Profile Image" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--------------------------------------------------- Qualifications------------------------------- -->
+
+        <section
+            class="qualifications py-6 bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')] bg-center bg-cover bg-no-repeat m-2 sm:m-4 lg:m-5 rounded-lg">
+            <div class="w-full flex flex-wrap p-0">
+                <div class="md:w-1/10"></div>
+                <div
+                    class="w-full bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')] bg-center bg-cover bg-no-repeat md:bg-none sticky top-[70px] pt-4 md:pt-0 md:w-2/10 lg:ps-6 md:mt-4">
+                    <ul
+                        class="flex space-x-4 sm:space-x-8 mt-2 mb-4 md:mt-0 md:mb-0 justify-center md:justify:start md:block sticky top-25 z-40">
+                        <li class="text-lg sm:text-xl xl:text-2xl font-medium text-cyan-400 mb-2">Education</li>
+                        <li class="text-lg sm:text-xl xl:text-2xl font-medium text-cyan-400 mb-2">Experience</li>
+                        <li class="text-lg sm:text-xl xl:text-2xl font-medium text-cyan-400">Skills</li>
+                    </ul>
+                </div>
+
+                <!-- ----------------Education ------------------------ -->
+                <div class="w-full md:w-7/10 lg:w-6/10 px-4 md-px-0">
+
+                    <h1 class="text-3xl lg:text-4xl font-bold text-cyan-400 px-2 md:px-0 mt-4">Education</h1>
+
+                    <div class="w-full flex mt-4">
+                        <div class=" w-20 flex items-center justify-center rounded-full">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor" class="size-10 text-cyan-400">
+                                <path
+                                    d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
+                                <path
+                                    d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
+                                <path
+                                    d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
+                            </svg>
+
+
+                        </div>
+                        <h1 class="w-full text-2xl font-bold py-3">Indian Institute of Information
+                            Technology Ranchi</h1>
+                    </div>
+                    <div class="w-full px-20">
+                        <h2 class="text-xl font-bold text-cyan-400">Master of Computer Applications</h2>
+                        <h2 class="text-xl font-semibold">Computer Science Engineering</h2>
+                        <h2 class="text-lg py-4">Ranchi - Jharkhand</h2>
+                        <h2 class="text-lg font-semibold text-cyan-400 pb-4">2025-2027 (Expected)</h2>
+
+                    </div>
+                    <div class="w-full border-t"></div>
+
+
+                    <div class="w-full">
+                        <div class="w-full flex">
+                            <div class=" w-20 flex items-center justify-center rounded-full">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
+                                    class="w-10 h-10 text-cyan-400" fill="currentColor">
+
+                                    <path
+                                        d="M80 259.8L289.2 345.9C299 349.9 309.4 352 320 352C330.6 352 341 349.9 350.8 345.9L593.2 246.1C602.2 242.4 608 233.7 608 224C608 214.3 602.2 205.6 593.2 201.9L350.8 102.1C341 98.1 330.6 96 320 96C309.4 96 299 98.1 289.2 102.1L46.8 201.9C37.8 205.6 32 214.3 32 224L32 520C32 533.3 42.7 544 56 544C69.3 544 80 533.3 80 520L80 259.8zM128 331.5L128 448C128 501 214 544 320 544C426 544 512 501 512 448L512 331.4L369.1 390.3C353.5 396.7 336.9 400 320 400C303.1 400 286.5 396.7 270.9 390.3L128 331.4z" />
+                                </svg>
+                            </div>
+                            <h1 class="w-full text-2xl font-bold py-3">Maharaja Suhel Dev State University</h1>
+                        </div>
+                        <div class="w-full px-20">
+                            <h2 class="text-xl font-bold text-cyan-400">Bachelor of Science</h2>
+                            <h2 class="text-xl font-semibold">Physics, Chemistry & Mathematics</h2>
+                            <h2 class="text-lg py-4">Azamgarh - Uttar Pradesh</h2>
+                            <h2 class="text-lg font-semibold text-cyan-400 pb-4">2022-2025</h2>
+                        </div>
+                        <div class="w-full border-t"></div>
+                    </div>
+
+                    <div class="w-full">
+                        <div class="w-full flex">
+                            <div class=" w-20 flex items-center justify-center rounded-full">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="currentColor" class="size-10 text-cyan-400 mt-2">
+                                    <path fill-rule="evenodd"
+                                        d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+
+
+                            </div>
+                            <h1 class="w-full text-2xl font-bold py-3">National Institute of Electronics & Information
+                                Technology</h1>
+                        </div>
+                        <div class="w-full px-20">
+                            <h2 class="text-xl font-bold text-cyan-400">'O'Level - NIELIT</h2>
+                            <h2 class="text-xl font-semibold">Information Technology</h2>
+                            <h2 class="text-lg py-4">Azamgarh - Uttar Pradesh</h2>
+                            <h2 class="text-lg font-semibold text-cyan-400 pb-4">2023-2024</h2>
+                        </div>
+                        <div class="w-full border-t "></div>
+                    </div>
+
+                    <div class="w-full">
+                        <div class="w-full flex">
+                            <div class=" w-20 flex items-center justify-center rounded-full">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="currentColor" class="size-10 text-cyan-400">
+                                    <path
+                                        d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z" />
+                                </svg>
+
+                            </div>
+                            <h1 class="w-full text-2xl font-bold py-3">UP Board</h1>
+                        </div>
+                        <div class="w-full px-20">
+                            <h2 class="text-xl font-bold text-cyan-400">Senior Secondary</h2>
+                            <h2 class="text-xl font-semibold">Mathematics</h2>
+                            <h2 class="text-lg py-4">Azamgarh - Uttar Pradesh</h2>
+                            <h2 class="text-lg font-semibold text-cyan-400 pb-4">2020-2022</h2>
+                        </div>
+                        <div class="w-full border-t"></div>
+                    </div>
+
+                    <!-- --------------------------------Experience------------------------------ -->
+
+                    <div class="w-full p-2" id="skills">
+                        <h1 class="w-full text-3xl font-bold text-cyan-400 py-5">Skills</h1>
+                        <div class="w-full">
+                            <div class=" w-full flex flex-wrap items-center space-x-8">
+                                <img src="Logo/html.png" alt="Logo" title="HTML" class="w-16 h-16" />
+                                <img src="Logo/css.png" alt="Logo" title="CSS" class="w-16 h-16" />
+                                <img src="Logo/JavaScript.png" alt="Logo" title="JavaScript" class="w-16 h-16" />
+                                <img src="Logo/bootstrap.png" alt="Logo" title="Bootstrap" class="w-16 h-16" />
+                                <img src="Logo/tailwind.png" alt="Logo" title="Tailwind" class="w-16 h-16" />
+                                <img src="Logo/python.webp" alt="Logo" title="Python" class="w-14 h-auto" />
+                                <img src="Logo/php.png" alt="Logo" title="PHP" class="w-24 h-auto" />
+                            </div>
+                            <div class=" w-full mt-4 flex flex-wrap items-center space-x-8 mb-4">
+                                <img src="Logo/c.png" alt="Logo" title="C Language" class="w-16 h-16" />
+                                <img src="Logo/cpp.png" alt="Logo" title="C++" class="w-16 h-16" />
+                                <img src="Logo/csharp.png" alt="Logo" title="C#" class="w-16 h-16" />
+
+                                <img src="Logo/java.webp" alt="Logo" title="Java" class="w-16 h-16" />
+                                <img src="Logo/springboot.png" alt="Logo" title="Spring Boot" class="w-16 h-16" />
+                                <div class="flex flex-wrap items-center space-x-2">
+                                    <img src="Logo/premierePro.webp" alt="Logo" title="Adobe Premiere Pro"
+                                        class="w-20 h-20" />
+                                    <img src="Logo/photoshop.png" alt="Logo" title="Adobe Photoshop"
+                                        class="w-24 h-auto" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/10"></div>
+            </div>
+        </section>
+
+        <!-- --------------------------------Projects --------------------------------------------------->
+
+        <section
+            class="projects pb-8 bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')] bg-cover bg-no-repeat mx-2 sm:mx-4 lg:mx-5 rounded-lg"
+            id="projects">
+            <div class="w-full flex flex-wrap py-2 md:py-5 justify-evenly">
+                <div class="w-full text-center text-4xl lg:text-5xl font-bold mt-4 mb-4 md:mb-8" id="pText">Projects
+                </div>
+                <div class="hover:-translate-y-2 transition h-auto w-96 sm:h-86 mb-4 mt-4 rounded p-4 shadow-[0_0_8px_0_rgba(0,220,220,0.3)]"
+                    id="box1">
+                    <div class="w-full flex justify-center items-center">
+
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="size-13 my-1 text-cyan-400">
+                            <path
+                                d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                            <path
+                                d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                        </svg>
+
+                    </div>
+                    <h2 class="text-lg lg:text-xl font-semibold text-center pb-3">Portfolio</h2>
+                    <p class="text-base px-6">
+                        A showcase of my skills, projects, and professional achievements, highlighting my expertise in
+                        [Full
+                        Stack Applications], creativity, and problem-solving abilities.
+                    </p>
+                    <div class="w-full border-t border-gray-400 mx-auto mt-6"></div>
+                    <p class="text-cyan-400 text-lg font-semibold text-center py-4">HTML • Tailwind-CSS • JavaScript</p>
+
+                </div>
+                <div class="hover:-translate-y-2 transition w-96 h-auto sm:h-86 mb-4 mt-4 rounded p-4 shadow-[0_0_8px_0_rgba(0,220,220,0.3)]"
+                    id="box2">
+                    <div class="w-full flex justify-center items-center">
+                        <i class="fa-solid fa-cart-plus fa-3x p-2 my-1 text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-lg lg:text-xl font-semibold text-center pb-3">Flipkart Clone</h3>
+                    <p class="text-base px-6">
+                        A fully functional e-commerce web application inspired by Flipkart, featuring product listing,
+                        search,
+                        cart management, and user authentication.
+                    </p>
+                    <div class="w-full border-t border-gray-400 mx-auto mt-6"></div>
+
+                    <p class="text-cyan-400 text-lg font-semibold text-center pt-4">HTML • CSS • Bootstrap • JavaScript
+                    </p>
+                    <p class="text-cyan-400 text-lg font-semibold text-center">Backend - PHP</p>
+
+
+                </div>
+                <div class="hover:-translate-y-2 transition h-auto w-96 sm:h-86 mb-4 mt-4 rounded shadow-[0_0_8px_0_rgba(0,220,220,0.3)] p-4"
+                    id="box3">
+                    <div class="w-full flex justify-center items-center">
+
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor" class="size-13 my-2 text-cyan-400">
+                            <path fill-rule="evenodd"
+                                d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm3.97.97a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Zm4.28 4.28a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                    </div>
+                    <h3 class="text-lg lg:text-xl font-semibold text-center pb-3">CRUD Application</h3>
+                    <p class="text-base px-6">
+                        A web application demonstrating full Create, Read, Update, and Delete (CRUD) functionality, with
+                        a clean
+                        interface for managing data efficiently.
+                    </p>
+                    <div class="w-full border-t border-gray-400 mx-auto mt-6"></div>
+                    <p class="text-cyan-400 text-lg font-semibold text-center pt-4">HTML • CSS • Bootstrap • JavaScript
+                    </p>
+                    <p class="text-cyan-400 text-lg font-semibold text-center">Backend - PHP | C# </p>
+
+                </div>
+                <div class="hover:-translate-y-2 transition h-auto w-96 sm:h-86 mb-4 mt-4 rounded shadow-[0_0_8px_0_rgba(0,220,220,0.3)] p-4"
+                    id="box4">
+                    <div class="w-full flex justify-center items-center">
+                        <i class="fa-solid fa-hospital fa-3x my-3 text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-lg lg:text-xl font-semibold text-center pb-3">Hospital Management</h3>
+                    <p class="text-base px-6">
+                        A hospital management web application for handling patient records, appointments, and staff
+                        management
+                        with an easy-to-use interface.
+                    </p>
+                    <div class="w-full border-t border-gray-400 mx-auto mt-6"></div>
+
+                    <p class="text-cyan-400 text-lg font-semibold text-center pt-4">HTML • CSS • Bootstrap • JavaScript
+                    </p>
+                    <p class="text-cyan-400 text-lg font-semibold text-center">Backend - PHP</p>
+
+                </div>
+                <div class="hover:-translate-y-2 transition h-auto w-96 sm:h-86 mb-4 mt-4 rounded shadow-[0_0_8px_0_rgba(0,220,220,0.3)] p-4"
+                    id="box5">
+                    <div class="w-full flex justify-center items-center">
+                        <i class="fa-solid fa-people-group fa-3x my-2 text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-lg lg:text-xl font-semibold text-center pb-3">Team Projects</h3>
+
+                    <p class="text-base px-6">
+                        A collaborative web application for managing team projects, tracking tasks, deadlines, and team
+                        member
+                        contributions in real-time.
+                    </p>
+                    <div class="w-full border-t border-gray-400 mx-auto mt-6"></div>
+                    <p class="text-cyan-400 text-lg font-semibold text-center py-4">C# Using ASP.NET</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- --------------------------------------Contact ----------------------------------------- -->
+
+        <section class="contact pb-8 bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')]
+  bg-center bg-cover bg-no-repeat m-2 sm:m-4 lg:m-5 rounded-lg" id="contact">
+            <div class="flex flex-wrap pt-4 pb-6 justify-evenly">
+                <div class="w-full text-center text-4xl lg:text-5xl font-bold my-4 md:my-8 ">Contact Us</div>
+
+                <div
+                    class="hover:shadow-[0_0_24px_0_rgba(0,220,220,0.3)] h-auto w-84 sm:h-68 mb-4 mt-4 rounded p-4 shadow-[0_0_8px_0_rgba(0,220,220,0.3)]">
+                    <div class="flex justify-center items-center mb-4 mt-3">
+
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
+                            fill="currentColor" class="size-24 mt-2 mb-2 text-gray-950 rounded-full p-6 bg-cyan-400">
+                            <path
+                                d="M224.2 89C216.3 70.1 195.7 60.1 176.1 65.4L170.6 66.9C106 84.5 50.8 147.1 66.9 223.3C104 398.3 241.7 536 416.7 573.1C493 589.3 555.5 534 573.1 469.4L574.6 463.9C580 444.2 569.9 423.6 551.1 415.8L453.8 375.3C437.3 368.4 418.2 373.2 406.8 387.1L368.2 434.3C297.9 399.4 241.3 341 208.8 269.3L253 233.3C266.9 222 271.6 202.9 264.8 186.3L224.2 89z" />
+                        </svg>
+
+                    </div>
+                    <h3 class="text-lg lg:text-xl font-semibold text-center pb-2">Contact Number</h3>
+                    <p class="text-cyan-400 text-lg font-semibold text-center py-2">+91 xxxxxxxxxx</p>
+
+                </div>
+                <div
+                    class="hover:shadow-[0_0_24px_0_rgba(0,220,220,0.3)] h-auto w-84 sm:h-68 mb-4 mt-4 rounded p-4 shadow-[0_0_8px_0_rgba(0,220,220,0.3)]">
+                    <div class="flex justify-center items-center mb-4 mt-3">
+
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
+                            fill="currentColor" class="size-24 mt-2 mb-2 text-gray-950 rounded-full p-6 bg-cyan-400">
+                            <path
+                                d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
+                        </svg>
+
+                    </div>
+                    <h3 class="text-lg lg:text-xl font-semibold text-center pb-2">Email Address</h3>
+                    <p class="text-cyan-400 text-lg font-semibold text-center py-2 truncate pe-2">
+                        alokmauryaofficial9936@gmail.com</p>
+
+                </div>
+                <div
+                    class="hover:shadow-[0_0_24px_0_rgba(0,220,220,0.3)] h-auto w-84 sm:h-68 mb-4 mt-4 rounded p-4 shadow-[0_0_8px_0_rgba(0,220,220,0.3)]">
+                    <div class="flex justify-center items-center mb-4 mt-3">
+                        <a href="/" aria-label="Portfolio">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="size-24 mt-2 mb-2 text-gray-950 rounded-full p-7 bg-cyan-400">
+                                <path
+                                    d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                                <path
+                                    d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                            </svg>
+
+                    </div>
+
+                    <h3 class="text-lg lg:text-xl font-semibold text-center pb-2">Portfolio Website</h3>
+                    <p class="text-cyan-400 text-lg font-semibold text-center py-2">Alok Maurya</p>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- -------------------------------------- Contact Form ----------------------------------- -->
+
+        <section class="contact-Form pt-8 pb-8 bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')]
+  bg-center bg-cover bg-no-repeat mx-2 sm:mx-4 lg:mx-5 rounded-lg" id="contact-form">
+            <div class="flex flex-wrap px-8 sm:px-16 md:px-24 xl:px-32 py-4 hover:-translate-y-2 transition">
+                <!-- Left box: Map -->
+                <div class="w-full lg:w-1/2">
+
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15225.746023549369!2d78.44420826367812!3d17.438809619297107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c55bb43183%3A0x1abc135b23ee2703!2sAmeerpet%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1782320000937!5m2!1sen!2sin"
+                        class="w-full h-96 lg:h-full rounded-se rounded-ss lg:rounded-se-none lg:rounded-es"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;"
+                        title="Google Map : My Location">
+                    </iframe>
+                </div>
+
+                <!-- Right box: Form -->
+                <div
+                    class="w-full lg:w-1/2 bg-gray-200 p-4 sm:p-10 md:p-8 lg:p-10 rounded-ee rounded-es lg:rounded-es-none lg:rounded-se space-y-4">
+                    <form class="space-y-4" id="contactForm">
+                        <input type="text" placeholder="Enter Full Name" class="w-full px-4 py-3 sm:py-4 border border-gray-400 text-black bg-gray-100 rounded-lg 
+                       focus:outline-none focus:ring-1 focus:ring-cyan-700 focus:border-cyan-400" name="name"
+                            required />
+
+                        <input type="email" placeholder="Enter Your Email" class="w-full px-4 py-3 sm:py-4 border border-gray-400 text-black bg-gray-100 rounded-lg 
+                       focus:outline-none focus:ring-1 focus:ring-cyan-700 focus:border-cyan-400" name="email"
+                            required />
+
+                        <textarea rows="5" placeholder="Enter Your Message" class="w-full px-4 py-3 sm:py-4 border-gray-400 text-black bg-gray-100 border border-gray-300 rounded-lg 
+                       focus:outline-none focus:ring-1 focus:ring-cyan-700 focus:border-cyan-400" name="message"
+                            required></textarea>
+
+                        <button type="submit"
+                            class="bg-cyan-500 text-white py-2 px-6 rounded-3xl font-semibold text-base sm:text-lg cursor-pointer hover:bg-cyan-700 transition"
+                            id="emailBtn">Send Message</button>
+                        <span id="status"></span>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- -----------------------Footer section----------------------------------------- -->
+
+    <footer class="bg-[url('Logo/Gem_1y2kf71y2kf71y2k.png')]
+   bg-cover bg-no-repeat shadow bottom-0 m-0 p-0">
+
+        <div class="relative flex justify-center justify-center items-center w-full h-24 bg-cover bg-center"
+            style="background-image: url('Logo/Gemini_Generated_Image_fs9r8vfs9r8vfs9r.png');">
+            <span id="time" class="text-base py-2 px-4 font-medium">00:00</span>
+        </div>
+
+
+        <div class="flex flex-wrap p-1 sm:p-2">
+            <div class="w-full sm:w-1/2 lg:w-1/4 ps-6 sm:ps-12 lg:ps-4 py-4">
+                <a href="#about">
+                    <h2 class="text-2xl font-semibold mt-2 mb-2">About</h2>
+                </a>
+
+                <p class="text-base pr-8">"The future belongs to Internet and Technology - and creativity is the heart
+                    of everything I build."</p>
+
+                <div class="flex space-x-2 sm:space-x-3 mt-8">
+
+                    <a href="https://youtube.com/@alokmauryavlogs" aria-label="YouTube"
+                        class="text-cyan-400 hover:text-red-500 transition-colors ">
+                        <!-- Facebook -->
+                        <!-- <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                clip-rule="evenodd"></path>
+                        </svg> -->
+                        <!-- YouTube -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            class="w-8 h-8 hover:-translate-y-1 transition" fill="currentColor" viewBox="0 0 640 640">
+                            <path
+                                d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z" />
+                        </svg>
+                    </a>
+                    <!-- Twitter/X -->
+                    <a href="https://x.com/AlokSDE" aria-label="Twitter/X"
+                        class="text-cyan-400 hover:text-gray-300 transition-colors">
+                        <svg aria-hidden="true" class="w-8 h-8 hover:-translate-y-1 transition" fill="currentColor"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/alokmaurya.in" aria-label="Instagram"
+                        class="text-cyan-400 hover:text-pink-600 transition-colors">
+                        <svg aria-hidden="true" class="w-8 h-8 hover:-translate-y-1 transition" fill="currentColor"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/alokmauryaofficial" aria-label="LinkedIn"
+                        class="text-cyan-400 hover:text-blue-600 transition-colors">
+                        <svg aria-hidden="true" class="w-7 h-7 hover:-translate-y-1 transition" fill="currentColor"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/byteAlok" aria-label="GitHub"
+                        class="text-cyan-400 hover:text-gray-300 transition-colors">
+                        <svg aria-hidden="true" class="w-8 h-8 hover:-translate-y-1 transition" fill="currentColor"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/4 ps-8 sm:ps-12 lg:ps-4 py-4">
+                <h2 class="text-2xl font-semibold mt-2 mb-2">Projects</h2>
+                <a href="#projects">
+                    <ul class="list-disc p-4">
+                        <li>Portfolio</li>
+                        <li>Flipkart Clone</li>
+                        <li>CRUD Applications</li>
+                        <li>Hostital Management</li>
+                        <li>Team Projects</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/4 ps-8 sm:ps-12 lg:ps-4 py-4">
+                <h2 class="text-2xl font-semibold mt-2 mb-2">Useful Links</h2>
+
+                <ul class="list-disc p-4">
+                    <li><a href="#home">Home </a></li>
+                    <li><a href="#about">About </a></li>
+                    <li><a href="#projects">Projects </a></li>
+                    <li><a href="#skills">Skills </a></li>
+                    <li><a href="#contact">Contact </a></li>
+                </ul>
+
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/4 ps-8 sm:ps-12 lg:ps-4 py-4">
+                <a href="#contact">
+                    <h2 class="text-2xl font-semibold mt-2 mb-6">Contact Us</h2>
+                </a>
+
+                <i class="fa-solid fa-envelope fa-lg hover:-translate-y-1 transition hover:text-cyan-400"></i>
+                <span class="ps-2">alokmauryaofficial9936@gmail.com</span>
+                <p class="my-3"></p>
+                <i class="fa-solid fa-phone fs-lg hover:-translate-y-1 transition hover:text-cyan-400"></i>
+                <span class="ps-2">+91 xxxxxxxxxx</span>
+
+            </div>
+
+        </div>
+        <div class="w-full text-center text-lg px-4 py-6">Designed & Developed by : Alok Maurya 💖</div>
+        <div class="w-full border-t p-0 m-0"></div>
+        <div class="w-full text-center text-base p-4">© <span id="year"></span> Alok Maurya. All Rights Reserved</div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("time").textContent = new Date();
+    </script>
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="animate.js"></script>
+<script src="email.js"></script>
+
+
+
+</html>

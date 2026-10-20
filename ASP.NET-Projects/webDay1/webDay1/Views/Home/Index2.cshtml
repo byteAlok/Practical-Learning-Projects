@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Alok Maurya</h2>
+<h3>@Html.ActionLink("Visit About Page","About","Home", new { @class="nav-link text-primary fs-5" })</h3>
+
+<ul>
+@for (int i = 1; i < 21; i++)
+{
+    <li>@(i)</li>
+}
+</ul>
